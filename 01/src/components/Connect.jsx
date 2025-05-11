@@ -95,7 +95,7 @@ const Connect = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Email</h3>
-                    <a href="mailto:your.email@example.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
+                    <a href="mailto: rathournikhil042@gmail.com" className="text-gray-400 hover:text-cyan-400 transition-colors">
                       rathournikhil042@gmail.com
                     </a>
                   </div>
@@ -107,7 +107,7 @@ const Connect = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Phone</h3>
-                    <a href="tel:+11234567890" className="text-gray-400 hover:text-purple-400 transition-colors">
+                    <a href="tel:+917505445202" className="text-gray-400 hover:text-purple-400 transition-colors">
                       +91 75054-45202
                     </a>
                   </div>
@@ -119,7 +119,7 @@ const Connect = () => {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold">Location</h3>
-                    <p className="text-gray-400">Ahemedabad, India</p>
+                    <p className="text-gray-400">Ahemedabad, Gujrat, India</p>
                   </div>
                 </div>
               </div>
