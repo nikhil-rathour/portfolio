@@ -1,71 +1,13 @@
-import { useState, useEffect, useRef } from 'react';
+// src/pages/Home.jsx
+import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import visitorCounter from '../services/visitorCounter';
 
 const Home = () => {
-  const [visitorCount, setVisitorCount] = useState(0);
-  const [displayCount, setDisplayCount] = useState(0);
-  const [isLoading, setIsLoading] = useState(true);
-
-  // Animation function (same as before)
-  const animateCount = (finalCount) => {
-    setDisplayCount(0);
-    setIsLoading(true);
-    
-    const duration = 2000;
-    const frameRate = 24;
-    const totalFrames = (duration / 1000) * frameRate;
-    const increment = finalCount / totalFrames;
-    let currentFrame = 0;
-    
-    const interval = setInterval(() => {
-      currentFrame++;
-      
-      if (currentFrame >= totalFrames) {
-        setDisplayCount(finalCount);
-        setIsLoading(false);
-        clearInterval(interval);
-      } else {
-        const nextCount = Math.round(increment * currentFrame);
-        setDisplayCount(nextCount);
-      }
-    }, 1000 / frameRate);
-    
-    return () => clearInterval(interval);
-  };
-
   useEffect(() => {
-    document.title = "Nikhil Rathour | Portfolio";
-
-    const updateCounter = () => {
-      // Check sessionStorage to see if already counted this session
-      if (!sessionStorage.getItem('hasCounted')) {
-        // Get current count from localStorage
-        const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
-        const newCount = currentCount + 1;
-        
-        // Update storage
-        localStorage.setItem('visitorCount', newCount.toString());
-        sessionStorage.setItem('hasCounted', 'true');
-        
-        // Update state and animate
-        setVisitorCount(newCount);
-        animateCount(newCount);
-      } else {
-        // Already counted this session - just display current count
-        const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
-        setVisitorCount(currentCount);
-        animateCount(currentCount);
-      }
-    };
-
-    updateCounter();
-  }, []);
-
-
-  // ... rest of your component remains the same ...
-
+document.title = "Nikhil Rathour | Portfolio";
+}, []);
+ 
   return ( 
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
       {/* Hero Section */} 
@@ -143,96 +85,6 @@ const Home = () => {
               ))}
             </div>
             
-            {/* Visitor Counter with Count-Up Animation */}
-            <motion.div
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.5 }}
-              className="relative mt-6 group"
-            >
-              {/* Animated gradient background */}
-              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
-              
-              {/* Main counter container */}
-              <div className="relative flex items-center gap-4 bg-gray-800/90 backdrop-blur-lg py-4 px-5 rounded-lg border border-gray-700 shadow-lg overflow-hidden group-hover:shadow-cyan-500/20 transition-all duration-300">
-                {/* Decorative elements */}
-                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-purple-600/20 to-transparent"></div>
-                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-cyan-500/10 rounded-full blur-md"></div>
-                
-                {/* Eye icon container */}
-                <div className="flex flex-shrink-0 items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-full border border-cyan-400/40 shadow-md shadow-cyan-500/20 overflow-hidden group-hover:shadow-cyan-500/40 transition-all duration-300">
-                  <div className={`relative w-full h-full flex items-center justify-center transition-all duration-500 ${isLoading ? 'animate-pulse' : ''}`}>
-                    {/* Loading spinner that transitions to eye */}
-                    <i className={`fas ${isLoading ? 'fa-spinner fa-spin' : 'fa-eye'} text-2xl text-cyan-300`}></i>
-                    
-                    {/* Circular progress indicator */}
-                    {isLoading && (
-                      <svg className="absolute inset-0 w-full h-full -rotate-90">
-                        <circle 
-                          cx="50%" 
-                          cy="50%" 
-                          r="48%" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="2" 
-                          className="text-cyan-500/30"
-                        />
-                        <circle 
-                          cx="50%" 
-                          cy="50%" 
-                          r="48%" 
-                          fill="none" 
-                          stroke="currentColor" 
-                          strokeWidth="2"
-                          strokeDasharray="300"
-                          strokeDashoffset={isLoading ? "300" : "0"}
-                          className="text-cyan-400 transition-all duration-2000"
-                        >
-                          <animate 
-                            attributeName="stroke-dashoffset" 
-                            from="300" 
-                            to="0" 
-                            dur="2s" 
-                            fill="freeze" 
-                          />
-                        </circle>
-                      </svg>
-                    )}
-                  </div>
-                </div>
-                
-                {/* Counter Text */}
-                <div className="flex flex-col">
-                  <div className="flex items-center gap-2">
-                    <span className="text-cyan-300 text-xs font-medium uppercase tracking-wider">Portfolio Visitors</span>
-                    {isLoading && (
-                      <span className="px-2 py-0.5 bg-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium animate-pulse flex items-center gap-1">
-                        <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
-                        Counting...
-                      </span>
-                    )}
-                  </div>
-                  
-                  {/* The counter that animates from 0 to final count */}
-                  <div className="flex items-baseline mt-1">
-                    <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white tracking-tight font-mono">
-                      {displayCount.toLocaleString()}
-                    </div>
-                    <span className="ml-2 text-xs text-cyan-400 font-medium">visits</span>
-                  </div>
-                  
-                  {/* Progress bar */}
-                  <div className="mt-2 w-full bg-gray-700/50 rounded-full h-1.5 overflow-hidden">
-                    <div 
-                      className="h-full bg-gradient-to-r from-cyan-500 to-purple-500 transition-all duration-2000 rounded-full"
-                      style={{ 
-                        width: isLoading ? `${(displayCount / Math.max(visitorCount, 1)) * 100}%` : '100%'
-                      }}
-                    />
-                  </div>
-                </div>
-              </div>
-            </motion.div>
           </motion.div>
 
           {/* Right Column - Image/Illustration */}
