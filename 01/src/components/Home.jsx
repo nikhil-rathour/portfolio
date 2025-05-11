@@ -1,36 +1,107 @@
 // src/pages/Home.jsx
-import { useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Home = () => {
+  const [visitorCount, setVisitorCount] = useState(0);
+  const [displayCount, setDisplayCount] = useState(0);
+  const [isLoading, setIsLoading] = useState(true);
+  
+  // Function to animate count from 0 to final number
+  const animateCount = (finalCount) => {
+    // Always start counting from 0
+    setDisplayCount(0);
+    setIsLoading(true);
+    
+    // Duration and timing setup
+    const duration = 2000; // 2 seconds for the animation
+    const frameRate = 24; // Frames per second
+    const totalFrames = duration / 1000 * frameRate;
+    const increment = finalCount / totalFrames;
+    let currentFrame = 0;
+    
+    // Start the animation
+    const interval = setInterval(() => {
+      currentFrame++;
+      
+      if (currentFrame >= totalFrames) {
+        // Animation complete
+        setDisplayCount(finalCount);
+        setIsLoading(false);
+        clearInterval(interval);
+      } else {
+        // Calculate next count based on frame
+        const nextCount = Math.round(increment * currentFrame);
+        setDisplayCount(nextCount);
+      }
+    }, 1000 / frameRate);
+    
+    // Clean up interval if component unmounts
+    return () => clearInterval(interval);
+  };
+  
   useEffect(() => {
     document.title = "Nikhil Rathour | Portfolio";
+    
+    // First get or set the actual visitor count
+    const getVisitorCount = () => {
+      // Check if visitor has been counted before
+      const hasVisited = localStorage.getItem('hasVisited');
+      let count = 0;
+      
+      if (!hasVisited) {
+        // New visitor - increment the count
+        const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
+        count = currentCount + 1;
+        
+        // Update localStorage
+        localStorage.setItem('visitorCount', count.toString());
+        localStorage.setItem('hasVisited', 'true');
+      } else {
+        // Returning visitor - just get the current count
+        count = parseInt(localStorage.getItem('visitorCount') || '0');
+      }
+      
+      // Update the actual visitor count
+      setVisitorCount(count);
+      
+      // Start the animation from 0 to the final count
+      const cleanup = animateCount(count);
+      
+      return cleanup;
+    };
+    
+    // Start the process
+    const cleanup = getVisitorCount();
+    
+    // Cleanup when component unmounts
+    return cleanup;
   }, []);
 
-  return (
+  return ( 
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
-      {/* Hero Section */}
-      <section className="container mx-auto px-4 sm:px-6 py-20 md:py-32 lg:py-40">
+      {/* Hero Section */} 
+      <section className="container mx-auto px-4 sm:px-6 py-20 md:py-32 lg:py-40"> 
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
           {/* Left Column - Text Content */}
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.8 }}
             className="w-full md:w-1/2 space-y-6 md:space-y-8"
-          >
-            <div className="space-y-4">
+          > 
+            <div className="space-y-4"> 
               <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold">
-                Hi, I'm <span className="animate-text bg-gradient-to-r from-teal-300 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">Nikhil</span>
-              </h1>
-              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-300">
-                <span className="typewriter border-r-2 border-cyan-400 pr-1 animate-cursor">Frontend Developer</span>
-              </h2>
+                Hi, I'm <span className="animate-text bg-gradient-to-r from-teal-300 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">Nikhil</span> 
+              </h1> 
+              <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-300"> 
+                <span className="typewriter border-r-2 border-cyan-400 pr-1 animate-cursor">Frontend Developer</span> 
+              </h2> 
               <p className="text-base md:text-lg text-gray-400 max-w-lg">
-                I create beautiful, responsive websites and applications with modern technologies. 
-                Passionate about UI/UX design and creating seamless user experiences.
-              </p>
+                I create beautiful, responsive websites and applications with modern technologies.
+                Passionate about UI/UX design and creating seamless user experiences. 
+              </p> 
             </div>
 
             <div className="flex flex-wrap gap-4">
@@ -47,7 +118,6 @@ const Home = () => {
                 Contact Me
               </Link>
             </div>
-
 
             {/* Social Links */}
             <div className="flex space-x-4 pt-4">
@@ -85,6 +155,97 @@ const Home = () => {
                 </a>
               ))}
             </div>
+            
+            {/* Visitor Counter with Count-Up Animation */}
+            <motion.div
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.8, delay: 0.5 }}
+              className="relative mt-6 group"
+            >
+              {/* Animated gradient background */}
+              <div className="absolute -inset-1 bg-gradient-to-r from-cyan-500 via-purple-500 to-blue-500 rounded-lg blur opacity-75 group-hover:opacity-100 transition duration-300 animate-pulse"></div>
+              
+              {/* Main counter container */}
+              <div className="relative flex items-center gap-4 bg-gray-800/90 backdrop-blur-lg py-4 px-5 rounded-lg border border-gray-700 shadow-lg overflow-hidden group-hover:shadow-cyan-500/20 transition-all duration-300">
+                {/* Decorative elements */}
+                <div className="absolute right-0 top-0 bottom-0 w-32 bg-gradient-to-l from-purple-600/20 to-transparent"></div>
+                <div className="absolute -bottom-6 -right-6 w-24 h-24 bg-cyan-500/10 rounded-full blur-md"></div>
+                
+                {/* Eye icon container */}
+                <div className="flex flex-shrink-0 items-center justify-center w-16 h-16 bg-gradient-to-br from-cyan-500/30 to-purple-500/30 rounded-full border border-cyan-400/40 shadow-md shadow-cyan-500/20 overflow-hidden group-hover:shadow-cyan-500/40 transition-all duration-300">
+                  <div className={`relative w-full h-full flex items-center justify-center transition-all duration-500 ${isLoading ? 'animate-pulse' : ''}`}>
+                    {/* Loading spinner that transitions to eye */}
+                    <i className={`fas ${isLoading ? 'fa-spinner fa-spin' : 'fa-eye'} text-2xl text-cyan-300`}></i>
+                    
+                    {/* Circular progress indicator */}
+                    {isLoading && (
+                      <svg className="absolute inset-0 w-full h-full -rotate-90">
+                        <circle 
+                          cx="50%" 
+                          cy="50%" 
+                          r="48%" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="2" 
+                          className="text-cyan-500/30"
+                        />
+                        <circle 
+                          cx="50%" 
+                          cy="50%" 
+                          r="48%" 
+                          fill="none" 
+                          stroke="currentColor" 
+                          strokeWidth="2"
+                          strokeDasharray="300"
+                          strokeDashoffset={isLoading ? "300" : "0"}
+                          className="text-cyan-400 transition-all duration-2000"
+                        >
+                          <animate 
+                            attributeName="stroke-dashoffset" 
+                            from="300" 
+                            to="0" 
+                            dur="2s" 
+                            fill="freeze" 
+                          />
+                        </circle>
+                      </svg>
+                    )}
+                  </div>
+                </div>
+                
+                {/* Counter Text */}
+                <div className="flex flex-col">
+                  <div className="flex items-center gap-2">
+                    <span className="text-cyan-300 text-xs font-medium uppercase tracking-wider">Portfolio Visitors</span>
+                    {isLoading && (
+                      <span className="px-2 py-0.5 bg-cyan-500/20 rounded-full text-cyan-400 text-xs font-medium animate-pulse flex items-center gap-1">
+                        <span className="w-1.5 h-1.5 bg-cyan-400 rounded-full"></span>
+                        Counting...
+                      </span>
+                    )}
+                  </div>
+                  
+                  {/* The counter that animates from 0 to final count */}
+                  <div className="flex items-baseline mt-1">
+                    <div className="text-4xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white via-cyan-200 to-white tracking-tight font-mono">
+                      {displayCount.toLocaleString()}
+                    </div>
+                    <span className="ml-2 text-xs text-cyan-400 font-medium">visits</span>
+                  </div>
+                  
+                  {/* Progress bar */}
+                  <div className="mt-2 w-full bg-gray-700/50 rounded-full h-1.5 overflow-hidden">
+                    <div 
+                      className="h-full bg-gradient-to-r from-cyan-500 to-purple-500 transition-all duration-2000 rounded-full"
+                      style={{ 
+                        width: isLoading ? `${(displayCount / Math.max(visitorCount, 1)) * 100}%` : '100%'
+                      }}
+                    />
+                  </div>
+                </div>
+              </div>
+            </motion.div>
           </motion.div>
 
           {/* Right Column - Image/Illustration */}
@@ -152,11 +313,6 @@ const Home = () => {
           </div>
         </div>
       </section>
-
-      {/* Add these custom animations to your CSS file or add them inline at the top of your component */}
-      <style jsx>{`
-       
-      `}</style>
     </div>
   );
 };
