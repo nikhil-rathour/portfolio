@@ -5,52 +5,52 @@ const Projects = () => {
   const projects = [
     {
       id: 1,
-      title: "E-commerce Platform",
-      description: "A full-featured online store with cart functionality, user authentication, and payment processing.",
-      tags: ["React", "Node.js", "MongoDB", "Tailwind"],
+      title: "PetZone",
+      description: "A hackathon-winning project for pet adoption and services using React, JavaScript, and Appwrite.",
+      tags: ["React", "JavaScript", "Appwrite"],
       image: "/project1.jpg",
-      link: "#"
+      link: "https://petzone-mu.vercel.app/"
     },
     {
       id: 2,
-      title: "Task Management App",
-      description: "Productivity application for organizing tasks with drag-and-drop functionality and team collaboration.",
-      tags: ["React", "Firebase", "Material UI"],
+      title: "EVENTsync",
+      description: "Website for college clubs and activities management with event scheduling and registration.",
+      tags: ["React", "Node.js", "Express"],
       image: "/project2.jpg",
-      link: "#"
+      link: "https://eventsync-tafw.onrender.com/"
     },
     {
       id: 3,
-      title: "Portfolio Website",
-      description: "Custom portfolio website with animations and responsive design (this website).",
-      tags: ["React", "Tailwind", "Framer Motion"],
+      title: "GitHub API",
+      description: "A simplified interface for fetching and displaying GitHub user repositories and information.",
+      tags: ["React", "JavaScript", "GitHub API"],
       image: "/project3.jpg",
-      link: "#"
+      link: "https://github-api-rho-two.vercel.app/"
     },
     {
       id: 4,
-      title: "Weather Dashboard",
-      description: "Real-time weather application with forecast data visualization.",
-      tags: ["JavaScript", "API Integration", "Chart.js"],
+      title: "Portfolio Website",
+      description: "Custom portfolio website with animations and responsive design (this website).",
+      tags: ["React", "Tailwind", "Framer Motion"],
       image: "/project4.jpg",
       link: "#"
     },
-    {
-      id: 5,
-      title: "Social Media Analytics",
-      description: "Dashboard for tracking social media metrics and engagement.",
-      tags: ["React", "D3.js", "Express"],
-      image: "/project5.jpg",
-      link: "#"
-    },
-    {
-      id: 6,
-      title: "Recipe Finder",
-      description: "Application for discovering recipes based on available ingredients.",
-      tags: ["Vue.js", "Spoonacular API", "Vuetify"],
-      image: "/project6.jpg",
-      link: "#"
-    }
+    // {
+    //   id: 5,
+    //   title: "Weather Dashboard",
+    //   description: "Real-time weather application with forecast data visualization.",
+    //   tags: ["JavaScript", "API Integration", "Chart.js"],
+    //   image: "/project5.jpg",
+    //   link: "#"
+    // },
+    // {
+    //   id: 6,
+    //   title: "Social Media Analytics",
+    //   description: "Dashboard for tracking social media metrics and engagement.",
+    //   tags: ["React", "D3.js", "Express"],
+    //   image: "/project6.jpg",
+    //   link: "#"
+    // }
   ];
 
   return (
@@ -114,6 +114,8 @@ const Projects = () => {
                   <a 
                     href={project.link} 
                     className="inline-flex items-center text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+                    target="_blank"
+                    rel="noopener noreferrer"
                   >
                     View Project <span className="ml-2 fas fa-arrow-right"></span>
                   </a>
