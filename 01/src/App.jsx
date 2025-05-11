@@ -6,7 +6,7 @@ import Home from './components/Home';
 import About from './components/About';
 import Connect from './components/Connect';
 import Projects from './components/Projects.jsx';
-
+import { Analytics } from "@vercel/analytics/react"
 
 
 
@@ -28,6 +28,7 @@ function App() {
   return (
     <>
       <RouterProvider router={router}/>
+      <Analytics />
       
       
     </>
