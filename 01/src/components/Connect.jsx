@@ -130,7 +130,7 @@ const Connect = () => {
           className="text-center max-w-4xl mx-auto"
         >
           <motion.h1 
-            className="text-5xl md:text-7xl font-bold mb-6 relative inline-block"
+            className="text-4xl md:text-6xl font-bold mb-6"
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 0.7 }}
@@ -138,12 +138,12 @@ const Connect = () => {
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
               Let's Connect
             </span>
-            <motion.span 
+            {/* <motion.span 
               className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-600"
               initial={{ width: 0 }}
               animate={{ width: "100%" }}
               transition={{ delay: 0.6, duration: 0.8 }}
-            ></motion.span>
+            ></motion.span> */}
           </motion.h1>
           <motion.p 
             className="text-xl text-gray-300 mb-8"
