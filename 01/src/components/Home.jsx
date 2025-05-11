@@ -1,7 +1,7 @@
-// src/pages/Home.jsx
 import { useState, useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import visitorCounter from '../services/visitorCounter';
 
 const Home = () => {
   const [visitorCount, setVisitorCount] = useState(0);
@@ -10,74 +10,58 @@ const Home = () => {
   
   // Function to animate count from 0 to final number
   const animateCount = (finalCount) => {
-    // Always start counting from 0
     setDisplayCount(0);
     setIsLoading(true);
     
-    // Duration and timing setup
-    const duration = 2000; // 2 seconds for the animation
-    const frameRate = 24; // Frames per second
+    const duration = 2000;
+    const frameRate = 24;
     const totalFrames = duration / 1000 * frameRate;
     const increment = finalCount / totalFrames;
     let currentFrame = 0;
     
-    // Start the animation
     const interval = setInterval(() => {
       currentFrame++;
       
       if (currentFrame >= totalFrames) {
-        // Animation complete
         setDisplayCount(finalCount);
         setIsLoading(false);
         clearInterval(interval);
       } else {
-        // Calculate next count based on frame
         const nextCount = Math.round(increment * currentFrame);
         setDisplayCount(nextCount);
       }
     }, 1000 / frameRate);
     
-    // Clean up interval if component unmounts
     return () => clearInterval(interval);
   };
   
   useEffect(() => {
     document.title = "Nikhil Rathour | Portfolio";
     
-    // First get or set the actual visitor count
-    const getVisitorCount = () => {
-      // Check if visitor has been counted before
-      const hasVisited = localStorage.getItem('hasVisited');
-      let count = 0;
-      
-      if (!hasVisited) {
-        // New visitor - increment the count
-        const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
-        count = currentCount + 1;
+    const updateVisitorCount = async () => {
+      try {
+        // First increment the count
+        const response = await visitorCounter.incrementCount();
+        const count = response.count;
         
-        // Update localStorage
-        localStorage.setItem('visitorCount', count.toString());
-        localStorage.setItem('hasVisited', 'true');
-      } else {
-        // Returning visitor - just get the current count
-        count = parseInt(localStorage.getItem('visitorCount') || '0');
+        // Update the actual visitor count
+        setVisitorCount(count);
+        
+        // Start the animation from 0 to the final count
+        animateCount(count);
+      } catch (error) {
+        console.error('Error updating visitor count:', error);
+        // Fallback to simple count if there's an error
+        const fallbackCount = parseInt(localStorage.getItem('visitorCount') || 0) + 1;
+        localStorage.setItem('visitorCount', fallbackCount.toString());
+        animateCount(fallbackCount);
       }
-      
-      // Update the actual visitor count
-      setVisitorCount(count);
-      
-      // Start the animation from 0 to the final count
-      const cleanup = animateCount(count);
-      
-      return cleanup;
     };
     
-    // Start the process
-    const cleanup = getVisitorCount();
-    
-    // Cleanup when component unmounts
-    return cleanup;
+    updateVisitorCount();
   }, []);
+
+  // ... rest of your component remains the same ...
 
   return ( 
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
