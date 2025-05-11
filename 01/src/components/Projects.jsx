@@ -1,6 +1,7 @@
 // src/pages/Projects.jsx
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
@@ -263,14 +264,14 @@ const Projects = () => {
               </div>
               
               <div className="md:w-1/3 flex justify-center">
-                <motion.a 
-                  href="connect" 
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.98 }}
-                  className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-medium text-lg shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 w-full md:w-auto"
+                <motion.div>
+                   <Link 
+                  to="/connect" 
+                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
                 >
-                  Let's Connect <span className="ml-2 fas fa-paper-plane"></span>
-                </motion.a>
+                  Let's Connect <span className="ml-2">→</span>
+                </Link>
+                </motion.div>
               </div>
             </div>
           </motion.div>
