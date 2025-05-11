@@ -53,7 +53,7 @@ const Header = () => {
             to="/" 
             className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 relative"
           >
-            <span className="neon-text">Portfolio</span>
+            <span className="animate-text bg-gradient-to-r from-teal-300 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">N  I  K  H  I  L</span>
           </Link>
 
           {/* Desktop Navigation Links */}
