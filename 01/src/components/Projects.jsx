@@ -15,7 +15,7 @@ const Projects = () => {
       title: "PetZone",
       description: "A hackathon-winning project for pet adoption and services using React, JavaScript, and Appwrite.",
       tags: ["React", "JavaScript", "Appwrite"],
-      image: "/petzone.jpg"
+      image: "/petzonelogo.jpg"
 ,
       link: "https://petzone-mu.vercel.app/",
       category: "web"
