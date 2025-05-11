@@ -7,15 +7,15 @@ const Home = () => {
   const [visitorCount, setVisitorCount] = useState(0);
   const [displayCount, setDisplayCount] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
-  
-  // Function to animate count from 0 to final number
+
+  // Animation function (same as before)
   const animateCount = (finalCount) => {
     setDisplayCount(0);
     setIsLoading(true);
     
     const duration = 2000;
     const frameRate = 24;
-    const totalFrames = duration / 1000 * frameRate;
+    const totalFrames = (duration / 1000) * frameRate;
     const increment = finalCount / totalFrames;
     let currentFrame = 0;
     
@@ -34,32 +34,35 @@ const Home = () => {
     
     return () => clearInterval(interval);
   };
-  
+
   useEffect(() => {
     document.title = "Nikhil Rathour | Portfolio";
-    
-    const updateVisitorCount = async () => {
-      try {
-        // First increment the count
-        const response = await visitorCounter.incrementCount();
-        const count = response.count;
+
+    const updateCounter = () => {
+      // Check sessionStorage to see if already counted this session
+      if (!sessionStorage.getItem('hasCounted')) {
+        // Get current count from localStorage
+        const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
+        const newCount = currentCount + 1;
         
-        // Update the actual visitor count
-        setVisitorCount(count);
+        // Update storage
+        localStorage.setItem('visitorCount', newCount.toString());
+        sessionStorage.setItem('hasCounted', 'true');
         
-        // Start the animation from 0 to the final count
-        animateCount(count);
-      } catch (error) {
-        console.error('Error updating visitor count:', error);
-        // Fallback to simple count if there's an error
-        const fallbackCount = parseInt(localStorage.getItem('visitorCount') || 0) + 1;
-        localStorage.setItem('visitorCount', fallbackCount.toString());
-        animateCount(fallbackCount);
+        // Update state and animate
+        setVisitorCount(newCount);
+        animateCount(newCount);
+      } else {
+        // Already counted this session - just display current count
+        const currentCount = parseInt(localStorage.getItem('visitorCount') || '0');
+        setVisitorCount(currentCount);
+        animateCount(currentCount);
       }
     };
-    
-    updateVisitorCount();
+
+    updateCounter();
   }, []);
+
 
   // ... rest of your component remains the same ...
 
