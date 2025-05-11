@@ -4,6 +4,7 @@ import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 
 
+
 const Projects = () => {
   const [selectedFilter, setSelectedFilter] = useState('all');
   const [isLoaded, setIsLoaded] = useState(false);
@@ -14,7 +15,8 @@ const Projects = () => {
       title: "PetZone",
       description: "A hackathon-winning project for pet adoption and services using React, JavaScript, and Appwrite.",
       tags: ["React", "JavaScript", "Appwrite"],
-      image: "/petzonelogo.jpg",
+      image: "/petzone.jpg"
+,
       link: "https://petzone-mu.vercel.app/",
       category: "web"
     },
