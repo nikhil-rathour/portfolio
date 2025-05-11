@@ -264,7 +264,7 @@ const Projects = () => {
               
               <div className="md:w-1/3 flex justify-center">
                 <motion.a 
-                  href="/connect" 
+                  href="connect" 
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.98 }}
                   className="inline-flex items-center justify-center px-8 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-xl font-medium text-lg shadow-lg shadow-cyan-500/30 hover:shadow-xl hover:shadow-cyan-500/40 transition-all duration-300 w-full md:w-auto"
