@@ -2,7 +2,7 @@
 import { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import VisitorCounter from '../components/VisitorCounter';
+
 
 
 const Home = () => {
@@ -18,7 +18,7 @@ const Home = () => {
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
       
     {/* Visitor Counter */}
-       <VisitorCounter />
+       
 
       {/* Hero Section */} 
       <section className="container mx-auto px-4 sm:px-6 py-20 md:py-32 lg:py-40"> 
