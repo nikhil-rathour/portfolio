@@ -13,7 +13,7 @@ const Home = () => {
     try {
       // 1. Get environment variables
       const GIST_ID = "696fc3b0bdb1254cc3e365d1192cb3fc"
-      const GITHUB_TOKEN = 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;
+      const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
       
       // 2. Fetch current count from gist
       const response = await fetch(`https://api.github.com/gists/${GIST_ID}`);
