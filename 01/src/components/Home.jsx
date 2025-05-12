@@ -9,68 +9,12 @@ const Home = () => {
   useEffect(() => {
   document.title = "Nikhil Rathour | Portfolio";
   
-  const updateCounter = async () => {
-   
-    try {
-      // 1. Get environment variables
-      const token = process.env.REACT_APP_GITHUB_TOKEN;
-      const gistId = process.env.REACT_APP_GIST_ID;
-     
-      
-      
-      // 2. Fetch current count from gist
-      const response = await fetch(`https://api.github.com/gists/${gistId}`, );
-      const gistData = await response.json();
-      
-      // 3. Parse current count from gist
-      const currentCount = JSON.parse(gistData.files['counter.json'].content).count;
-      const newCount = currentCount + 1; // Increment count
-      
-      // 4. Update the gist with new count
-      await fetch(`https://api.github.com/gists/${gistId}`, {
-        method: 'PATCH',
-        headers: {
-          'Authorization': `token ${token}`,
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          files: {
-            'counter.json': {
-              content: JSON.stringify({ count: newCount })
-            }
-          }
-        })
-      });
-      
-      // 5. Update React state to show new count
-      setVisitorCount(newCount);
-    } catch (error) {
-      console.error("Error updating counter:", error);
-      // Fallback to localStorage if API fails
-      const localCount = localStorage.getItem('visitorCount') || 1000;
-      const newLocalCount = parseInt(localCount) + 1;
-      setVisitorCount(newLocalCount);
-      localStorage.setItem('visitorCount', newLocalCount);
-    }
-  };
-
-  updateCounter();
+  
 }, []);
 
   return ( 
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
-      {/* Visitor Counter (bottom right corner) */}
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ delay: 1.5 }}
-        className="fixed bottom-6 right-6 bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 border border-cyan-400/30 shadow-lg shadow-cyan-500/10 z-50"
-      >
-        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
-        <span className="text-sm font-medium">
-          {visitorCount.toLocaleString()} visits
-        </span>
-      </motion.div>
+      
 
       {/* Hero Section */} 
       <section className="container mx-auto px-4 sm:px-6 py-20 md:py-32 lg:py-40"> 
