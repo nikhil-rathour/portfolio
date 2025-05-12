@@ -12,7 +12,7 @@ const Home = () => {
   const updateCounter = async () => {
     try {
       // 1. Get environment variables
-      const GIST_ID = process.env.REACT_APP_GIST_ID;
+      const GIST_ID = "696fc3b0bdb1254cc3e365d1192cb3fc"
       const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
       
       // 2. Fetch current count from gist
