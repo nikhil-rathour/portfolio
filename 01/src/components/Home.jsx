@@ -13,12 +13,13 @@ const Home = () => {
    
     try {
       // 1. Get environment variables
-      
+      const token = process.env.REACT_APP_GITHUB_TOKEN;
+      const gistId = process.env.REACT_APP_GIST_ID;
      
       
       
       // 2. Fetch current count from gist
-      const response = await fetch(`https://api.github.com/gists/a2fec226e7dbb9e604e33c33b126061d`);
+      const response = await fetch(`https://api.github.com/gists/${gistId}`, );
       const gistData = await response.json();
       
       // 3. Parse current count from gist
@@ -26,10 +27,10 @@ const Home = () => {
       const newCount = currentCount + 1; // Increment count
       
       // 4. Update the gist with new count
-      await fetch(`https://api.github.com/gists/a2fec226e7dbb9e604e33c33b126061d`, {
+      await fetch(`https://api.github.com/gists/${gistId}`, {
         method: 'PATCH',
         headers: {
-          'Authorization': `token ${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}`,
+          'Authorization': `token ${token}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
