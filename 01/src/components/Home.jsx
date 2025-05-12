@@ -14,7 +14,8 @@ const Home = () => {
     try {
       // 1. Get environment variables
       
-      const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+     
+      
       
       // 2. Fetch current count from gist
       const response = await fetch(`https://api.github.com/gists/a2fec226e7dbb9e604e33c33b126061d`);
@@ -28,7 +29,7 @@ const Home = () => {
       await fetch(`https://api.github.com/gists/a2fec226e7dbb9e604e33c33b126061d`, {
         method: 'PATCH',
         headers: {
-          'Authorization': `token ${GITHUB_TOKEN}`,
+          'Authorization': `token ${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}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
