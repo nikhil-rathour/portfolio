@@ -4,12 +4,43 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Home = () => {
+  const [visitorCount, setVisitorCount] = useState(1000); // Default starting count
+
   useEffect(() => {
-document.title = "Nikhil Rathour | Portfolio";
-}, []);
- 
+    document.title = "Nikhil Rathour | Portfolio";
+    
+    const updateCounter = async () => {
+      try {
+        // Using YOUR Gist ID
+        const response = await fetch('https://api.github.com/gists/696fc3b0bdb1254cc3e365d1192cb3fc');
+        const gistData = await response.json();
+        const currentCount = JSON.parse(gistData.files['counter.json'].content).count;
+        
+        // Update the displayed count (+1 for current visitor)
+        setVisitorCount(currentCount + 1);
+      } catch (error) {
+        console.log("Visitor counter loading... showing fallback count");
+      }
+    };
+
+    updateCounter();
+  }, []);
+
   return ( 
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
+      {/* Visitor Counter (bottom right corner) */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5 }}
+        className="fixed bottom-6 right-6 bg-gray-800/80 backdrop-blur-sm px-4 py-2 rounded-full flex items-center gap-2 border border-cyan-400/30 shadow-lg shadow-cyan-500/10 z-50"
+      >
+        <span className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></span>
+        <span className="text-sm font-medium">
+          {visitorCount.toLocaleString()} visits
+        </span>
+      </motion.div>
+
       {/* Hero Section */} 
       <section className="container mx-auto px-4 sm:px-6 py-20 md:py-32 lg:py-40"> 
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
@@ -84,7 +115,6 @@ document.title = "Nikhil Rathour | Portfolio";
                 </a>
               ))}
             </div>
-            
           </motion.div>
 
           {/* Right Column - Image/Illustration */}
@@ -103,8 +133,6 @@ document.title = "Nikhil Rathour | Portfolio";
                 <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
                 <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
                 <span className="text-6xl md:text-8xl relative z-10">👨‍💻</span>
-                {/* Replace with your actual image */}
-                {/* <img src="/your-photo.jpg" alt="Nikhil Rathour" className="w-full h-full object-cover" /> */}
               </div>
             </div>
           </motion.div>
@@ -121,7 +149,7 @@ document.title = "Nikhil Rathour | Portfolio";
             viewport={{ once: true }}
             className="text-2xl sm:text-3xl font-bold text-center mb-8 md:mb-12"
           >
-            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple to-blue-500">
+            <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-purple-500 to-blue-500">
               My Skills
             </span>
           </motion.h2>
