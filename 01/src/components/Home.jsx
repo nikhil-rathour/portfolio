@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Home = () => {
-  const [visitorCount, setVisitorCount] = useState(1000); // Default starting count
+  const [visitorCount, setVisitorCount] = useState(0); // Default starting count
 
   useEffect(() => {
     document.title = "Nikhil Rathour | Portfolio";
