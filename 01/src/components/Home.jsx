@@ -28,7 +28,7 @@ const Home = () => {
       await fetch(`https://api.github.com/gists/a2fec226e7dbb9e604e33c33b126061d`, {
         method: 'PATCH',
         headers: {
-          'Authorization': `token ${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}`,
+          'Authorization': `token ${GITHUB_TOKEN}`,
           'Content-Type': 'application/json'
         },
         body: JSON.stringify({
