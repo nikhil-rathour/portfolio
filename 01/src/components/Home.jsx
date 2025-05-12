@@ -4,27 +4,55 @@ import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 
 const Home = () => {
-  const [visitorCount, setVisitorCount] = useState(0); // Default starting count
+  const [visitorCount, setVisitorCount] = useState(100); // Default starting count
 
   useEffect(() => {
-    document.title = "Nikhil Rathour | Portfolio";
-    
-    const updateCounter = async () => {
-      try {
-        // Using YOUR Gist ID
-        const response = await fetch('https://api.github.com/gists/696fc3b0bdb1254cc3e365d1192cb3fc');
-        const gistData = await response.json();
-        const currentCount = JSON.parse(gistData.files['counter.json'].content).count;
-        
-        // Update the displayed count (+1 for current visitor)
-        setVisitorCount(currentCount + 1);
-      } catch (error) {
-        console.log("Visitor counter loading... showing fallback count");
-      }
-    };
+  document.title = "Nikhil Rathour | Portfolio";
+  
+  const updateCounter = async () => {
+    try {
+      // 1. Get environment variables
+      const GIST_ID = process.env.REACT_APP_GIST_ID;
+      const GITHUB_TOKEN = process.env.REACT_APP_GITHUB_TOKEN;
+      
+      // 2. Fetch current count from gist
+      const response = await fetch(`https://api.github.com/gists/${GIST_ID}`);
+      const gistData = await response.json();
+      
+      // 3. Parse current count from gist
+      const currentCount = JSON.parse(gistData.files['counter.json'].content).count;
+      const newCount = currentCount + 1; // Increment count
+      
+      // 4. Update the gist with new count
+      await fetch(`https://api.github.com/gists/${GIST_ID}`, {
+        method: 'PATCH',
+        headers: {
+          'Authorization': `token ${GITHUB_TOKEN}`,
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          files: {
+            'counter.json': {
+              content: JSON.stringify({ count: newCount })
+            }
+          }
+        })
+      });
+      
+      // 5. Update React state to show new count
+      setVisitorCount(newCount);
+    } catch (error) {
+      console.error("Error updating counter:", error);
+      // Fallback to localStorage if API fails
+      const localCount = localStorage.getItem('visitorCount') || 1000;
+      const newLocalCount = parseInt(localCount) + 1;
+      setVisitorCount(newLocalCount);
+      localStorage.setItem('visitorCount', newLocalCount);
+    }
+  };
 
-    updateCounter();
-  }, []);
+  updateCounter();
+}, []);
 
   return ( 
     <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
