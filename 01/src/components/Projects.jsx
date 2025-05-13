@@ -99,7 +99,7 @@ const Projects = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-950 to-gray-900 text-white">
+    <div className=" text-white">
       {/* Decorative Elements */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob"></div>
@@ -117,7 +117,7 @@ const Projects = () => {
         >
           <h1 className="text-4xl md:text-6xl font-bold mb-6">
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-              My Projects
+              P R O J E C T S
             </span>
           </h1>
           <p className="text-xl md:text-2xl text-gray-300 mb-10 leading-relaxed">
@@ -125,43 +125,7 @@ const Projects = () => {
           </p>
           
           {/* Filter Buttons */}
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.3, duration: 0.5 }}
-            className="flex flex-wrap justify-center gap-4 mb-12"
-          >
-            <button 
-              onClick={() => setSelectedFilter('all')}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedFilter === 'all' 
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/30' 
-                  : 'bg-gray-800 hover:bg-gray-700'
-              }`}
-            >
-              All Projects
-            </button>
-            <button 
-              onClick={() => setSelectedFilter('web')}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedFilter === 'web' 
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/30' 
-                  : 'bg-gray-800 hover:bg-gray-700'
-              }`}
-            >
-              Web Apps
-            </button>
-            <button 
-              onClick={() => setSelectedFilter('api')}
-              className={`px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ${
-                selectedFilter === 'api' 
-                  ? 'bg-gradient-to-r from-cyan-500 to-blue-500 shadow-lg shadow-cyan-500/30' 
-                  : 'bg-gray-800 hover:bg-gray-700'
-              }`}
-            >
-              API Projects
-            </button>
-          </motion.div>
+          
         </motion.div>
       </section>
 
@@ -179,11 +143,11 @@ const Projects = () => {
                 key={project.id}
                 variants={cardVariants}
                 whileHover="hover"
-                className="group bg-gray-800/70 backdrop-blur-sm border border-gray-700/70 rounded-2xl overflow-hidden flex flex-col h-full transform transition-all duration-500"
+                className="group bg-gray-800/5 backdrop-blur-2 border border-gray-700/70 rounded-2xl overflow-hidden flex flex-col h-full transform transition-all duration-500"
               >
                 <div className="relative h-48 overflow-hidden">
                   {/* Gradient overlay for project image */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/20 to-purple-600/20 z-10 group-hover:opacity-70 transition-opacity duration-300"></div>
+                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/2 to-purple-600/20 z-10 group-hover:opacity-70 transition-opacity duration-300"></div>
                   
                   {/* Project number watermark */}
                   <div className="absolute -right-6 -top-6 text-8xl font-bold text-gray-700/20 group-hover:text-cyan-900/20 transition-colors duration-500">
@@ -231,16 +195,8 @@ const Projects = () => {
             ))}
           </motion.div>
           
-          {/* Empty state message if no projects match filter */}
-          {filteredProjects.length === 0 && (
-            <motion.div 
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              className="text-center py-20"
-            >
-              <p className="text-xl text-gray-400">No projects found with the selected filter.</p>
-            </motion.div>
-          )}
+       
+         
         </div>
       </section>
 
@@ -252,13 +208,13 @@ const Projects = () => {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.7 }}
             viewport={{ once: true }}
-            className="bg-gradient-to-r from-gray-800/70 to-gray-900/70 backdrop-blur-md rounded-3xl p-12 border border-gray-700/50 shadow-2xl shadow-purple-900/10"
+            className="bg-gradient-to-r from-gray-800/7 to-gray-900/7 backdrop-blur-1 rounded-3xl p-12 border-solide "
           >
             <div className="flex flex-col md:flex-row items-center justify-between gap-10">
               <div className="md:w-2/3">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-                    Ready to bring your ideas to life?
+                    Ready to bring your ideas to reali?
                   </span>
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed">
@@ -270,7 +226,8 @@ const Projects = () => {
                 <motion.div>
                    <Link 
                   to="/connect" 
-                  className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-medium hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300"
+                className="px-5 py-3 border border-cyan-400 text-cyan-400 rounded-lg font-medium hover:bg-cyan-400/10 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1"
+
                 >
                   Let's Connect <span className="ml-2">→</span>
                 </Link>
