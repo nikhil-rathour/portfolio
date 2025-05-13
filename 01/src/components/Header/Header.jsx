@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-//import  './Index.css'; // Assuming you have a CSS file for styles
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -45,19 +44,25 @@ const Header = () => {
   };
 
   return (
-    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-2 bg-gray-900/90 backdrop-blur-md shadow-lg' : 'py-4 bg-transparent'}`}>
-      <div className="container mx-auto px-6">
-        <nav className="flex items-center justify-between">
+    <header className={`fixed w-full z-50 transition-all duration-500 ${scrolled ? 'py-2' : 'py-4'}`}>
+      <div className="container mx-auto px-10">
+        {/* Horizontal header with subtle curvy outlines and reduced blur - with extra width padding */}
+        <nav className="flex items-center justify-between relative px-10">
+          {/* Blurred transparent background with curved edges - elongated */}
+          <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm rounded-3xl w-full border border-gray-500/20 shadow-md"></div>
+          
           {/* Logo with neon effect */}
-          <Link 
-            to="/" 
-            className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 relative"
-          >
-            <span className="animate-text bg-gradient-to-r from-teal-300 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">N  I  K  H  I  L</span>
-          </Link>
+          <div className="relative z-10">
+            <Link 
+              to="/" 
+              className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 relative"
+            >
+              <span className="animate-text bg-gradient-to-r from-teal-300 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">N  I  K  H  I  L</span>
+            </Link>
+          </div>
 
-          {/* Desktop Navigation Links */}
-          <div className="hidden md:flex items-center space-x-8">
+          {/* Desktop Navigation Links - horizontal with more spacing */}
+          <div className="hidden md:flex items-center space-x-10 relative z-10 pr-4">
             <Link 
               to="/" 
               className={`relative px-3 py-2 transition-all ${activeLink === 'home' ? 'text-cyan-300' : 'text-gray-300 hover:text-white'}`}
@@ -101,7 +106,7 @@ const Header = () => {
 
           {/* Mobile menu button */}
           <button 
-            className="md:hidden text-gray-300 hover:text-white focus:outline-none"
+            className="md:hidden text-gray-300 hover:text-white focus:outline-none relative z-10"
             onClick={toggleMobileMenu}
             aria-label="Toggle mobile menu"
           >
@@ -123,9 +128,9 @@ const Header = () => {
             mobileMenuOpen ? 'max-h-64 opacity-100 mt-4 mb-2' : 'max-h-0 opacity-0'
           }`}
         >
-          <div className="flex flex-col space-y-4 py-4 px-6 rounded-lg shadow-lg relative overflow-hidden border border-gray-700/30">
-            {/* Gradient background with blur effect */}
-            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/70 via-gray-800/50 to-gray-900/80 backdrop-blur-md"></div>
+          <div className="flex flex-col space-y-4 py-4 px-6 rounded-xl shadow-lg relative overflow-hidden border border-gray-700/30 w-full">
+            {/* Gradient background with reduced blur effect */}
+            <div className="absolute inset-0 bg-gradient-to-br from-gray-900/60 via-gray-800/40 to-gray-900/60 backdrop-blur-sm"></div>
             
             {/* Subtle gradient edge glow */}
             <div className="absolute inset-0 bg-gradient-to-r from-purple-500/10 via-cyan-500/5 to-pink-500/10 opacity-30"></div>
@@ -134,8 +139,8 @@ const Header = () => {
               to="/" 
               className={`relative px-4 py-2 rounded-md transition-all ${
                 activeLink === 'home' 
-                  ? 'bg-gray-800/50 text-cyan-300 border-l-2 border-cyan-400' 
-                  : 'text-gray-300 hover:bg-gray-800/30 hover:text-white'
+                  ? 'bg-gray-800/40 text-cyan-300 border-l-2 border-cyan-400' 
+                  : 'text-gray-300 hover:bg-gray-800/20 hover:text-white'
               }`}
             >
               Home
@@ -145,8 +150,8 @@ const Header = () => {
               to="/projects" 
               className={`relative px-4 py-2 rounded-md transition-all ${
                 activeLink === 'projects' 
-                  ? 'bg-gray-800/50 text-purple-300 border-l-2 border-purple-400' 
-                  : 'text-gray-300 hover:bg-gray-800/30 hover:text-white'
+                  ? 'bg-gray-800/40 text-purple-300 border-l-2 border-purple-400' 
+                  : 'text-gray-300 hover:bg-gray-800/20 hover:text-white'
               }`}
             >
               Projects
@@ -156,8 +161,8 @@ const Header = () => {
               to="/about" 
               className={`relative px-4 py-2 rounded-md transition-all ${
                 activeLink === 'about' 
-                  ? 'bg-gray-800/50 text-pink-300 border-l-2 border-pink-400' 
-                  : 'text-gray-300 hover:bg-gray-800/30 hover:text-white'
+                  ? 'bg-gray-800/40 text-pink-300 border-l-2 border-pink-400' 
+                  : 'text-gray-300 hover:bg-gray-800/20 hover:text-white'
               }`}
             >
               About
@@ -167,8 +172,8 @@ const Header = () => {
               to="/connect" 
               className={`relative px-4 py-2 rounded-md transition-all ${
                 activeLink === 'connect' 
-                  ? 'bg-gray-800/50 text-cyan-300 border-l-2 border-cyan-400' 
-                  : 'text-gray-300 hover:bg-gray-800/30 hover:text-white'
+                  ? 'bg-gray-800/40 text-cyan-300 border-l-2 border-cyan-400' 
+                  : 'text-gray-300 hover:bg-gray-800/20 hover:text-white'
               }`}
             >
               Connect
