@@ -14,7 +14,7 @@ const Home = () => {
 
   // hendel scroller 
    const handleScrollToBottom = () => {
-    console.log("scrolll");
+    
     
     window.scrollTo({
       top: document.body.scrollHeight,
