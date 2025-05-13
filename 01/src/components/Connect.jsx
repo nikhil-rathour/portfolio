@@ -110,7 +110,7 @@ const Connect = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white relative overflow-hidden">
+    <div className="">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute -top-40 -right-40 w-96 h-96 bg-blue-500/10 rounded-full blur-3xl"></div>
@@ -136,7 +136,7 @@ const Connect = () => {
             transition={{ delay: 0.2, duration: 0.7 }}
           >
             <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 via-blue-500 to-purple-600">
-              Let's Connect
+              C O N T A C T 
             </span>
             {/* <motion.span 
               className="absolute -bottom-2 left-0 w-full h-1 bg-gradient-to-r from-cyan-400 to-purple-600"
@@ -175,7 +175,6 @@ const Connect = () => {
                 <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
                   Contact Information
                 </span>
-                <span className="block h-1 w-20 bg-gradient-to-r from-cyan-400 to-blue-500 mt-2"></span>
               </motion.h2>
               
               <motion.div 
@@ -247,7 +246,7 @@ const Connect = () => {
                       href={social.url} 
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="w-12 h-12 flex items-center justify-center rounded-lg bg-gray-800/70 hover:bg-gray-700 border border-gray-700/50 hover:border-gray-500 transition-all duration-300 group shadow-lg hover:shadow-cyan-900/20"
+                      className="w-12 h-12 flex items-center justify-center rounded-lg  hover:bg-gray-700  hover:border-gray-500 transition-all duration-300 group shadow-lg hover:shadow-cyan-900/20"
                       aria-label={social.name}
                       whileHover={{ y: -5, transition: { duration: 0.2 } }}
                       variants={itemVariants}
@@ -261,11 +260,11 @@ const Connect = () => {
               {/* Additional info card */}
               <motion.div 
                 variants={itemVariants}
-                className="mt-10 bg-gradient-to-br from-gray-800/80 to-gray-900/80 p-6 rounded-xl border border-gray-700/50 shadow-lg"
+                className="mt-10    p-6 rounded-xl  "
               >
-                <h3 className="text-lg font-semibold mb-3 text-cyan-300">Available For</h3>
+                <h3 className="text-2xl font-semibold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Available For</h3>
                 <ul className="space-y-2">
-                  {['Freelance Projects', 'Full-time Opportunities', 'Collaborations'].map((item, index) => (
+                  {['Freelance Projects', 'Hackathons'," Web devlopment", 'Collaborations'].map((item, index) => (
                     <li key={index} className="flex items-center text-gray-300">
                       <span className="mr-2 text-green-400 text-sm fas fa-check-circle"></span>
                       {item}
@@ -283,7 +282,7 @@ const Connect = () => {
               viewport={{ once: true, margin: "-100px" }}
               className="lg:w-2/3"
             >
-              <div className="bg-gradient-to-br from-gray-800/50 to-gray-900/50 backdrop-blur-lg p-8 md:p-10 rounded-2xl border border-gray-700/50 shadow-xl">
+              <div className="   p-8 md:p-10 rounded-2xl border border-gray-700/50 shadow-xl">
                 <h2 className="text-3xl font-bold mb-8 flex items-center">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-purple-400 to-pink-500">
                     Send Me a Message
@@ -375,7 +374,7 @@ const Connect = () => {
                   <motion.button 
                     type="submit"
                     disabled={isSubmitting}
-                    className="w-full px-6 py-4 bg-gradient-to-r from-cyan-500 to-blue-600 rounded-lg font-medium text-lg hover:shadow-lg hover:shadow-cyan-500/30 transition-all duration-300 flex items-center justify-center gap-2 disabled:opacity-70 disabled:cursor-not-allowed"
+                    className="w-full px-6 py-4 border border-cyan-400 text-cyan-400 rounded-lg font-medium hover:bg-cyan-400/10 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1"
                     whileHover={{ scale: 1.02 }}
                     whileTap={{ scale: 0.98 }}
                   >
