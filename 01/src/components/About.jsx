@@ -288,108 +288,114 @@ const About = () => {
         
         <div className="space-y-8">
           {/* Hack the Mountains */}
-          <div className="group">
-            <div className="relative overflow-hidden rounded-xl mb-4">
-              <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
-              <div className="rounded-xl p-5">
-                <h4 className="text-xl font-bold text-white mb-2 flex items-center">
-                  <span className="text-cyan-400 mr-2">🏔️</span>
-                  Hack The Mountains 5.0
-                </h4>
-                <p className="text-gray-300 mb-3">
-                  A globally recognized hackathon focused on pushing the boundaries of creativity, innovation, and collaboration in the tech industry.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-2 py-1 bg-purple-900/50 text-purple-300 rounded-md text-xs font-medium border border-purple-700/50">1st Runner-up</span>
-                  <span className="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-md text-xs font-medium border border-cyan-700/50">Rajkot</span>
-                  <span className="px-2 py-1 bg-blue-900/50 text-blue-300 rounded-md text-xs font-medium border border-blue-700/50">2024</span>
-                </div>
-                <div className="mt-3">
-                  <h5 className="font-semibold text-purple-300 mb-2">Project: PetZone</h5>
-                  <p className="text-gray-400 text-sm mb-2">
-                    A comprehensive platform that connects pet owners with pet services including veterinarians, pet shops, and adoption centers.
-                  </p>
-
-                  <div className="flex gap-3 mt-3">
-                    <a
-                      href="https://github.com/nikhil-rathour/petzone" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
-                    >
-                      <span>GitHub</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </a>
-
-                    <a 
-                      href="https://petzone-mu.vercel.app/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
-                    >
-                      <span>Demo</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
           
-          {/* Spark the Summer */}
-          <div className="group">
-            <div className="relative overflow-hidden rounded-xl mb-4">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-pink-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
-              <div className="rounded-xl p-5">
-                <h4 className="text-xl font-bold text-white mb-2 flex items-center">
-                  <span className="text-orange-400 mr-2">☀️</span>
-                  Spark the Summer
-                </h4>
-                <p className="text-gray-300 mb-3">
-                  A student-run hackathon providing a platform for developers, designers, and entrepreneurs from colleges and high schools to collaborate and innovate.
-                </p>
-                <div className="flex flex-wrap gap-2 mb-4">
-                  <span className="px-2 py-1 bg-pink-900/50 text-pink-300 rounded-md text-xs font-medium border border-pink-700/50">Participant</span>
-                  <span className="px-2 py-1 bg-orange-900/50 text-orange-300 rounded-md text-xs font-medium border border-orange-700/50">2024</span>
-                </div>
-                <div className="mt-3">
-                  <h5 className="font-semibold text-orange-300 mb-2">Project: EventSync</h5>
-                  <p className="text-gray-400 text-sm mb-2">
-                    A collaborative event management platform designed to streamline planning, scheduling, and coordination for campus events.
-                  </p>
+          <div className="group relative overflow-hidden rounded-xl mb-4">
+  {/* Gradient overlay - moved to pseudo-element */}
+  <div className="absolute inset-0 rounded-xl overflow-hidden z-0">
+    <div className="absolute inset-0 bg-gradient-to-r from-purple-600/20 to-cyan-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
+  </div>
+  
+  {/* Content - with higher z-index */}
+  <div className="relative z-10 rounded-xl p-5">
+    <h4 className="text-xl font-bold text-white mb-2 flex items-center">
+      <span className="text-cyan-400 mr-2">🏔️</span>
+      Hack The Mountains 5.0
+    </h4>
+    <p className="text-gray-300 mb-3">
+      A globally recognized hackathon focused on pushing the boundaries of creativity, innovation, and collaboration in the tech industry.
+    </p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="px-2 py-1 bg-purple-900/50 text-purple-300 rounded-md text-xs font-medium border border-purple-700/50">1st Runner-up</span>
+      <span className="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-md text-xs font-medium border border-cyan-700/50">Rajkot</span>
+      <span className="px-2 py-1 bg-blue-900/50 text-blue-300 rounded-md text-xs font-medium border border-blue-700/50">2024</span>
+    </div>
+    <div className="mt-3">
+      <h5 className="font-semibold text-purple-300 mb-2">Project: PetZone</h5>
+      <p className="text-gray-400 text-sm mb-2">
+        A comprehensive platform that connects pet owners with pet services including veterinarians, pet shops, and adoption centers.
+      </p>
 
-                  <div className="flex gap-3 mt-3">
-                    <a 
-                      href="https://github.com/snehguptafr/eventsync" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-orange-400 hover:text-orange-300 transition-colors duration-300"
-                    >
-                      <span>GitHub</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </a>
-                    <a 
-                      href="https://eventsync-tafw.onrender.com/" 
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
-                    >
-                      <span>Demo</span>
-                      <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
-                        <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
-                      </svg>
-                    </a>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
+      <div className="flex gap-3 mt-3 relative z-20">
+        <a
+          href="https://github.com/nikhil-rathour/petzone" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+        >
+          <span>GitHub</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </a>
+
+        <a 
+          href="https://petzone-mu.vercel.app/" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+        >
+          <span>Demo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+          {/* Spark the Summer */}
+          <div className="group relative overflow-hidden rounded-xl mb-4">
+  {/* Gradient overlay - moved to pseudo-element */}
+  <div className="absolute inset-0 rounded-xl overflow-hidden z-0">
+    <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-pink-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
+  </div>
+  
+  {/* Content - with higher z-index */}
+  <div className="relative z-10 rounded-xl p-5">
+    <h4 className="text-xl font-bold text-white mb-2 flex items-center">
+      <span className="text-orange-400 mr-2">☀️</span>
+      Spark the Summer
+    </h4>
+    <p className="text-gray-300 mb-3">
+      A student-run hackathon providing a platform for developers, designers, and entrepreneurs from colleges and high schools to collaborate and innovate.
+    </p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="px-2 py-1 bg-pink-900/50 text-pink-300 rounded-md text-xs font-medium border border-pink-700/50">Participant</span>
+      <span className="px-2 py-1 bg-orange-900/50 text-orange-300 rounded-md text-xs font-medium border border-orange-700/50">2024</span>
+    </div>
+    <div className="mt-3">
+      <h5 className="font-semibold text-orange-300 mb-2">Project: EventSync</h5>
+      <p className="text-gray-400 text-sm mb-2">
+        A collaborative event management platform designed to streamline planning, scheduling, and coordination for campus events.
+      </p>
+
+      <div className="flex gap-3 mt-3 relative z-20">
+        <a 
+          href="https://github.com/snehguptafr/eventsync" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-sm text-orange-400 hover:text-orange-300 transition-colors duration-300"
+        >
+          <span>GitHub</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </a>
+        <a 
+          href="https://eventsync-tafw.onrender.com/" 
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+        >
+          <span>Demo</span>
+          <svg xmlns="http://www.w3.org/2000/svg" className="h-4 w-4 ml-1" viewBox="0 0 20 20" fill="currentColor">
+            <path fillRule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clipRule="evenodd" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
         </div>
       </motion.div>
     </div>
