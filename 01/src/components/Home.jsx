@@ -23,7 +23,13 @@ const Home = () => {
   };
 
   return ( 
-        <div className="">
+      <div className=" text-white">
+      {/* Decorative Elements */}
+      <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob"></div>
+        <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob animation-delay-2000"></div>
+        <div className="absolute bottom-1/4 left-1/2 w-96 h-96 bg-cyan-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob animation-delay-4000"></div>
+      </div>
 
       {/* Hero Section */}
       <section className="container mx-auto px-4 sm:px-6 py-16 md:py-24 lg:py-32"> {/* Adjusted padding */}
@@ -63,6 +69,17 @@ const Home = () => {
               >
                 Contact Me
               </Link>
+
+              <a
+                href="Nikhil_rathour_resume.pdf" // Replace with your actual resume path
+                download="Nikhil_Rathour_Resume.pdf"
+               className="px-3 py-3 border border-cyan-400 text-cyan-400 rounded-lg font-medium hover:bg-cyan-400/10 hover:shadow-lg hover:shadow-cyan-500/20 transition-all duration-300 transform hover:-translate-y-1"
+
+               >
+               Download Resume
+                </a>
+
+
             </div>
            
             {/* Social Links */}
@@ -71,22 +88,27 @@ const Home = () => {
                 { 
                   name: 'github',
                   url: 'https://github.com/nikhil-rathour',
-                  icon: 'fab fa-github'
+                  icon: 'fab fa-github',
+                  color: 'group-hover:text-gray-100'
                 },
                 { 
                   name: 'linkedin',
                   url: 'https://www.linkedin.com/in/nikhil-rathour-8a56302a6',
-                  icon: 'fab fa-linkedin-in'
+                  icon: 'fab fa-linkedin-in',
+                  color: 'group-hover:text-blue-400'
                 },
                 { 
                   name: 'discord',
                   url: 'https://discord.com/channels/@.nikhil_rathore',
-                  icon: 'fab fa-discord'
+                  icon: 'fab fa-discord',
+                  color: 'group-hover:text-indigo-400'
                 },
                 { 
                   name: 'instagram',
                   url: 'https://www.instagram.com/nikhil_.rathour',
-                  icon: 'fab fa-instagram'
+                  icon: 'fab fa-instagram',
+                  color: 'group-hover:text-pink-500'
+
                 }
               ].map((social) => (
                 <a 
@@ -94,10 +116,11 @@ const Home = () => {
                   href={social.url}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="w-10 h-10 flex items-center justify-center rounded-full bg-gray-800 hover:bg-gradient-to-r hover:from-cyan-500 hover:to-purple-600 transition-all duration-300 group"
+                 className="w-12 h-12 flex items-center justify-center rounded-lg  hover:bg-gray-700  hover:border-gray-500 transition-all duration-300 group shadow-lg hover:shadow-cyan-900/20"
                   aria-label={social.name}
                 >
-                  <span className={`text-gray-400 group-hover:text-white text-lg ${social.icon}`}></span>
+               <span className={`text-gray-400 ${social.color} text-xl fab ${social.icon}`}></span>
+
                 </a>
               ))}
             </div>
