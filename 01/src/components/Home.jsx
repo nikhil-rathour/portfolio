@@ -128,11 +128,9 @@ const Home = () => {
           </motion.div>
 
           {/* Right Column - Image/Illustration */}
-          <div className="flex justify-center items-center w-full h-[60vh] mt-4"> {/* Reduced margin and adjusted height */}
-            <EarthCanvas />
-      
-
-          </div>
+          <div className="flex justify-center items-center w-full h-[40vh] md:h-[60vh] mt-4">
+              <EarthCanvas />
+             </div>
         </div>
       </section>
 
