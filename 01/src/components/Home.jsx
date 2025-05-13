@@ -1,28 +1,22 @@
-// src/pages/Home.jsx
-import { useState, useEffect } from 'react';
+import {  useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
+import EarthCanvas from './EarthCanvas';
 
 
 
 const Home = () => {
-  const [visitorCount, setVisitorCount] = useState(100); // Default starting count
-
   useEffect(() => {
-  document.title = "Nikhil Rathour | Portfolio";
-  
-  
-}, []);
+    document.title = "Nikhil Rathour | Portfolio";
+  }, []);
 
   return ( 
-    <div className="min-h-screen bg-gradient-to-br from-gray-900 via-purple-900 to-gray-900 text-white overflow-hidden">
-      
-    {/* Visitor Counter */}
-       
+        <div className="">
 
-      {/* Hero Section */} 
-      <section className="container mx-auto px-4 sm:px-6 py-20 md:py-32 lg:py-40"> 
+      {/* Hero Section */}
+      <section className="container mx-auto px-4 sm:px-6 py-16 md:py-24 lg:py-32"> {/* Adjusted padding */}
         <div className="flex flex-col md:flex-row items-center justify-between gap-8 md:gap-12">
+          
           {/* Left Column - Text Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -57,7 +51,7 @@ const Home = () => {
                 Contact Me
               </Link>
             </div>
-
+           
             {/* Social Links */}
             <div className="flex space-x-4 pt-4">
               {[
@@ -94,27 +88,15 @@ const Home = () => {
                 </a>
               ))}
             </div>
+
           </motion.div>
 
           {/* Right Column - Image/Illustration */}
-          <motion.div 
-            initial={{ opacity: 0, x: 50 }}
-            animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="w-full md:w-1/2 flex justify-center mt-12 md:mt-0"
-          >
-            <div className="relative w-64 h-64 sm:w-72 sm:h-72 md:w-80 md:h-80 lg:w-96 lg:h-96">
-              {/* Animated background effects */}
-              <div className="absolute inset-0 bg-gradient-to-br from-cyan-500 to-purple-600 rounded-full blur-xl opacity-20 animate-pulse"></div>
-              <div className="absolute -inset-4 bg-gradient-to-r from-purple-500 via-cyan-500 to-blue-500 rounded-full opacity-30 blur-md animate-spin-slow"></div>
-              
-              <div className="relative w-full h-full bg-gray-800 rounded-full flex items-center justify-center overflow-hidden border-2 border-gray-700 shadow-xl shadow-purple-500/20">
-                <div className="absolute inset-0 bg-[url('/pattern.svg')] opacity-10"></div>
-                <div className="absolute inset-0 bg-gradient-to-b from-transparent to-gray-900/80"></div>
-                <span className="text-6xl md:text-8xl relative z-10">👨‍💻</span>
-              </div>
-            </div>
-          </motion.div>
+          <div className="flex justify-center items-center w-full h-[60vh] mt-4"> {/* Reduced margin and adjusted height */}
+            <EarthCanvas />
+      
+
+          </div>
         </div>
       </section>
 
@@ -134,13 +116,13 @@ const Home = () => {
           </motion.h2>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 md:gap-6">
-            {[
+            {[ 
               { name: 'React', icon: 'fab fa-react', color: 'text-cyan-400', bgColor: 'from-cyan-500/20 to-blue-500/20' },
               { name: 'JavaScript', icon: 'fab fa-js', color: 'text-yellow-400', bgColor: 'from-yellow-500/20 to-amber-500/20' },
               { name: 'Tailwind', icon: 'fas fa-wind', color: 'text-blue-400', bgColor: 'from-blue-500/20 to-cyan-500/20' },
               { name: 'Node.js', icon: 'fab fa-node-js', color: 'text-green-500', bgColor: 'from-green-500/20 to-emerald-500/20' },
               { name: 'HTML5', icon: 'fab fa-html5', color: 'text-orange-500', bgColor: 'from-orange-500/20 to-red-500/20' },
-              { name: 'CSS', icon: 'fab fa-css3-alt', color: 'text-blue-500', bgColor: 'from-blue-500/20 to-indigo-500/20' },
+              { name: 'CSS', icon: 'fab fa-css3-alt', color: 'text-blue-500', bgColor: 'from-blue-500/20 to-indigo-500/20' }
             ].map((skill, index) => (
               <motion.div
                 key={skill.name}
@@ -159,6 +141,9 @@ const Home = () => {
           </div>
         </div>
       </section>
+
+
+     
     </div>
   );
 };
