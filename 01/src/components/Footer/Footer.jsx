@@ -23,9 +23,9 @@ const Footer = () => {
           viewport={{ once: true }}
           className="border-t border-gray-800/50 mt-14 pt-8 text-center"
         >
-          <p className="text-gray-500 text-sm">
+          <a  href="https://github.com/nikhil-rathour/portfolio/tree/main " className="text-gray-500 text-sm">
             © {currentYear} Nikhil Rathour. All rights reserved.
-          </p>
+          </a>
           
         </motion.div>
       </div>
