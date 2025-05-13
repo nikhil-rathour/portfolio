@@ -145,22 +145,7 @@ const Projects = () => {
                 whileHover="hover"
                 className="group bg-gray-800/5 backdrop-blur-2 border border-gray-700/70 rounded-2xl overflow-hidden flex flex-col h-full transform transition-all duration-500"
               >
-                <div className="relative h-48 overflow-hidden">
-                  {/* Gradient overlay for project image */}
-                  <div className="absolute inset-0 bg-gradient-to-br from-cyan-600/2 to-purple-600/20 z-10 group-hover:opacity-70 transition-opacity duration-300"></div>
-                  
-                  {/* Project number watermark */}
-                  <div className="absolute -right-6 -top-6 text-8xl font-bold text-gray-700/20 group-hover:text-cyan-900/20 transition-colors duration-500">
-                    {project.id}
-                  </div>
-                  
-                  {/* Project image or placeholder */}
-                  <div className="h-full w-full bg-gradient-to-br from-gray-800 to-gray-700 flex items-center justify-center group-hover:scale-105 transition-transform duration-700">
-                    <span className="text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-gray-500 to-gray-600">
-                      {project.title}
-                    </span>
-                  </div>
-                </div>
+                
                 
                 <div className="p-8 flex-grow">
                   <h3 className="project-heading text-xl font-bold mb-3 group-hover:text-cyan-400 transition-colors duration-300">

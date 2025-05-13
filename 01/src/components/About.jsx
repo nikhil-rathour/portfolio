@@ -413,7 +413,7 @@ const About = () => {
             className="max-w-3xl mx-auto text-center"
           >
             <h2 className="text-3xl font-bold mb-8">
-              <span className="bg-clip-text text-transparent bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">
+              <span className="bg-clip-text text-transparent   bg-gradient-to-r from-cyan-400 to-blue-500">
                 Future Goals
               </span>
             </h2>
