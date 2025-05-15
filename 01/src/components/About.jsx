@@ -37,18 +37,18 @@ const About = () => {
           <div className="flex flex-col lg:flex-row gap-12 items-center">
 
             
-         <motion.div 
-  initial={{ opacity: 0, x: -50 }}
-  whileInView={{ opacity: 1, x: 0 }}
-  transition={{ duration: 0.5 }}
-  viewport={{ once: true }}
-  className="  mr-14 flex justify-center w-full lg:w-auto" // Full width on mobile, auto on desktop
->
-  {/* Container for IronManCanvas */}
-  <div className="w-[280px] h-[50vh] md:w-[320px] md:h-[60vh]">
-    <IronManCanvas />
-  </div>
-</motion.div>
+          <motion.div 
+            initial={{ opacity: 0, x: -50 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+            className="   flex justify-center w-full lg:w-auto" // Full width on mobile, auto on desktop
+          >
+            {/* Container for IronManCanvas */}
+            <div className="w-[280px] h-[50vh] md:w-[320px] md:h-[60vh]">
+              <IronManCanvas />
+            </div>
+            </motion.div>
 
             <motion.div 
               initial={{ opacity: 0, x: 50 }}

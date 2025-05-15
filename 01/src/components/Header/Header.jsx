@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
+import BackgroundMusic from '../BackgroundMusic';
 
 const Header = () => {
   const [scrolled, setScrolled] = useState(false);
@@ -52,14 +53,23 @@ const Header = () => {
           <div className="absolute inset-0 bg-gray-900/30 backdrop-blur-sm rounded-3xl w-full border border-gray-500/20 shadow-md"></div>
           
           {/* Logo with neon effect */}
-          <div className="relative z-10">
+          <div className="relative z-10 flex items-center">
             <Link 
               to="/" 
               className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-purple-400 via-pink-500 to-cyan-400 relative"
             >
               <span className="animate-text bg-gradient-to-r from-teal-300 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">N  I  K  H  I  L</span>
             </Link>
+
+
+
+            {/* Music button positioned as absolutely positioned element */}
+            <div className="absolute -right-10">
+              <BackgroundMusic />
+            </div>
           </div>
+
+
 
           {/* Desktop Navigation Links - horizontal with more spacing */}
           <div className="hidden md:flex items-center space-x-10 relative z-10 pr-4">
@@ -104,22 +114,24 @@ const Header = () => {
             </Link>
           </div>
 
-          {/* Mobile menu button */}
-          <button 
-            className="md:hidden text-gray-300 hover:text-white focus:outline-none relative z-10"
-            onClick={toggleMobileMenu}
-            aria-label="Toggle mobile menu"
-          >
-            {mobileMenuOpen ? (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
-              </svg>
-            ) : (
-              <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
-              </svg>
-            )}
-          </button>
+          {/* Mobile view - logo and menu toggle */}
+          <div className="md:hidden flex items-center space-x-3 relative z-10">
+            <button 
+              className="text-gray-300 hover:text-white focus:outline-none"
+              onClick={toggleMobileMenu}
+              aria-label="Toggle mobile menu"
+            >
+              {mobileMenuOpen ? (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12"></path>
+                </svg>
+              ) : (
+                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                </svg>
+              )}
+            </button>
+          </div>
         </nav>
 
         {/* Mobile Menu */}
