@@ -16,8 +16,8 @@ const IronManModel = () => {
     <primitive 
       ref={iromanRef} 
       object={scene} 
-      scale={2.7} 
-      position={[0, -4.5, 0]} // Adjust these values as needed
+      scale={3.2} 
+      position={[0, -5.5, 0]} // Adjust these values as needed
     />
   );
 };
