@@ -174,7 +174,7 @@ const Home = () => {
         { name: 'GitHub', icon: 'fab fa-github', color: 'text-gray-300', borderColor: 'border-gray-300/20', hoverBorder: 'hover:border-gray-300', shadow: 'hover:shadow-gray-300/20' },
         { name: 'Git', icon: 'fab fa-git-alt', color: 'text-red-400', borderColor: 'border-red-400/20', hoverBorder: 'hover:border-red-400', shadow: 'hover:shadow-red-400/20' },
         { name: 'Vercel', icon: 'fas fa-caret-up', color: 'text-white', borderColor: 'border-white/20', hoverBorder: 'hover:border-white', shadow: 'hover:shadow-white/20' },
-        { name: 'React Fiber', icon: 'fas fa-cubes', color: 'text-purple-400', borderColor: 'border-purple-400/20', hoverBorder: 'hover:border-purple-400', shadow: 'hover:shadow-purple-400/20' },
+        { name: 'Three js', icon: 'fas fa-cube', color: 'text-purple-400', borderColor: 'border-purple-400/20', hoverBorder: 'hover:border-purple-400', shadow: 'hover:shadow-purple-400/20' },
         { name: '3D Animation', icon: 'fas fa-cube', color: 'text-pink-400', borderColor: 'border-pink-400/20', hoverBorder: 'hover:border-pink-400', shadow: 'hover:shadow-pink-400/20' },
         { name: 'Vite', icon: 'fas fa-bolt', color: 'text-yellow-300', borderColor: 'border-yellow-300/20', hoverBorder: 'hover:border-yellow-300', shadow: 'hover:shadow-yellow-300/20' }
       ].map((skill, index) => (
