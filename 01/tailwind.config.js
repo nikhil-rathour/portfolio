@@ -15,11 +15,16 @@ export default {
         'text': 'text 5s ease infinite',
         'pulse': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
         'fadeIn': 'fadeIn 0.5s ease-in-out',
+         'spin-slow': 'spin 3s linear infinite',
+        'spin-slow-reverse': 'spin-reverse 3s linear infinite',
+        'pulse-slow': 'pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite',
+        'progress': 'progress 2s ease-in-out infinite',
       },
       keyframes: {
         musicBar: {
           '0%, 100%': { height: '4px' },
           '50%': { height: '12px' },
+          
         },
         text: {
           '0%, 100%': {
@@ -39,6 +44,13 @@ export default {
           '0%': { opacity: 0, transform: 'translateY(10px)' },
           '100%': { opacity: 1, transform: 'translateY(0)' },
         },
+        
+         progress: {
+          '0%': { width: '0%' },
+          '50%': { width: '100%' },
+          '100%': { width: '0%', marginLeft: '100%' },
+        },
+        
       },
     },
   },
