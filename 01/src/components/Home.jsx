@@ -48,7 +48,7 @@ const Home = () => {
                 Hi, I'm <span className="animate-text bg-gradient-to-r from-teal-300 via-purple-500 to-orange-500 bg-clip-text text-transparent drop-shadow-lg">Nikhil</span> 
               </h1> 
               <h2 className="text-xl sm:text-2xl md:text-3xl font-medium text-gray-300"> 
-                <span className="typewriter border-r-2 border-cyan-400 pr-1 animate-cursor">Frontend Developer</span> 
+                <span className="typewriter border-r-2 border-cyan-400 pr-1 animate-cursor">Full-Stack Developer</span> 
               </h2> 
               <p className="text-base md:text-lg text-gray-400 max-w-lg">
                 I create beautiful, responsive websites and applications with modern technologies.

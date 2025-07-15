@@ -20,6 +20,34 @@ const Projects = () => {
       link: "https://petzone-mu.vercel.app/",
       category: "web"
     },
+
+    {
+  id: 7,
+  title: "Uber Clone (MERN Full-Stack)",
+  description: "Fully functional ride-booking platform with user authentication, real-time ride status, and admin features.",
+  tags: ["MongoDB", "Express.js", "React.js", "Node.js", "Full-Stack"],
+  image: "/project9.jpg",
+  link: "https://uber-clone-opal.vercel.app/", 
+  category: "fullstack"
+  },
+  {
+  id: 5,
+  title: "AI Code Reviewer",
+  description: "LLM-powered real-time code review tool that gives intelligent feedback on JavaScript and React code.",
+  tags: ["React.js", "TypeScript", "Google Gemini API", "NLP"],
+  image: "/project7.jpg",
+  link: "https://ai-code-reviewer-ten-ivory.vercel.app/", 
+  category: "ai"
+},
+{
+  id: 6,
+  title: "AI Chatbot (NLP-based)",
+  description: "Conversational chatbot built using Next.js and powered by Natural Language Processing and LLMs.",
+  tags: ["Next.js", "TypeScript", "Tailwind CSS", "AI API", "NLP"],
+  image: "/project8.jpg",
+  link: "https://aichatbot-pi-three.vercel.app/", 
+  category: "ai"
+},
     {
       id: 2,
       title: "EVENTsync",
@@ -47,24 +75,8 @@ const Projects = () => {
       link: "#",
       category: "web"
     },
-    // {
-    //   id: 5,
-    //   title: "Weather Dashboard",
-    //   description: "Real-time weather application with forecast data visualization.",
-    //   tags: ["JavaScript", "API Integration", "Chart.js"],
-    //   image: "/project5.jpg",
-    //   link: "#",
-    //   category: "api"
-    // },
-    // {
-    //   id: 6,
-    //   title: "Social Media Analytics",
-    //   description: "Dashboard for tracking social media metrics and engagement.",
-    //   tags: ["React", "D3.js", "Express"],
-    //   image: "/project6.jpg",
-    //   link: "#",
-    //   category: "data"
-    // }
+    ,
+
   ];
 
   useEffect(() => {
