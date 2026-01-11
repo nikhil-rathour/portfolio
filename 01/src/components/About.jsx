@@ -65,16 +65,16 @@ const About = () => {
               
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg">
-                  I'm Nikhil Rathour, a second-year Bachelor of Computer Applications (BCA) student 
-                  with a passion for programming and web development. I'm actively enhancing my 
-                  skills in React, JavaScript, C++, and Java while building a solid foundation in
-                  Data Structures and Algorithms (DSA).
+                  I'm a Python Full-Stack Developer currently pursuing a Bachelor of Computer Applications, 
+                  with hands-on experience in building scalable web applications. I specialize in Python, 
+                  FastAPI, React, MongoDB, and RESTful APIs, with a strong focus on backend development 
+                  and a keen interest in Artificial Intelligence and Large Language Models (LLMs).
                   </p>
                 
                  <p className="text-lg">
-                  Recently, I created "PetZone" for a hackathon and proudly secured 1st runner-up at the
-                  "Hack the Mountain" event in Rajkot. This experience has motivated me to continue
-                  striving toward my goal of becoming a skilled web developer.
+                  In 2024, I secured the 1st Runner-Up position at the Hack the Mountain national-level 
+                  hackathon in Rajkot for my project "PetZone." This experience has motivated me to continue
+                  striving toward my goal of becoming a skilled full-stack developer.
                  </p>
                   </div>
 
@@ -104,6 +104,16 @@ const About = () => {
                         </div>
                         <span className="font-medium">JavaScript</span>
                       </div>
+
+                      {/* Python */}
+                      <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+                        <div className="w-6 h-6 mr-3 text-blue-400 group-hover:text-blue-300 transition-colors">
+                          <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M14.25.18l.9.2.73.26.59.3.45.32.34.34.25.34.16.33.1.3.04.26.02.2-.01.13V8.5l-.05.63-.13.55-.21.46-.26.38-.3.31-.33.25-.35.19-.35.14-.33.1-.3.07-.26.04-.21.02H8.77l-.69.05-.59.14-.5.22-.41.27-.33.32-.27.35-.2.36-.15.37-.1.35-.07.32-.04.27-.02.21v3.06H3.17l-.21-.03-.28-.07-.32-.12-.35-.18-.36-.26-.36-.36-.35-.46-.32-.59-.28-.73-.21-.88-.14-1.05-.05-1.23.06-1.22.16-1.04.24-.87.32-.71.36-.57.4-.44.42-.33.42-.24.4-.16.36-.1.32-.05.24-.01h.16l.06.01h8.16v-.83H6.18l-.01-2.75-.02-.37.05-.34.11-.31.17-.28.25-.26.31-.23.38-.2.44-.18.51-.15.58-.12.64-.1.71-.06.77-.04.84-.02 1.27.05zm-6.3 1.98l-.23.33-.08.41.08.41.23.34.33.22.41.09.41-.09.33-.22.23-.34.08-.41-.08-.41-.23-.33-.33-.22-.41-.09-.41.09zm13.09 3.95l.28.06.32.12.35.18.36.27.36.35.35.47.32.59.28.73.21.88.14 1.04.05 1.23-.06 1.23-.16 1.04-.24.86-.32.71-.36.57-.4.45-.42.33-.42.24-.4.16-.36.09-.32.05-.24.02-.16-.01h-8.22v.82h5.84l.01 2.76.02.36-.05.34-.11.31-.17.29-.25.25-.31.24-.38.2-.44.17-.51.15-.58.13-.64.09-.71.07-.77.04-.84.01-1.27-.04-1.07-.14-.9-.2-.73-.25-.59-.3-.45-.33-.34-.34-.25-.34-.16-.33-.1-.3-.04-.25-.02-.2.01-.13v-5.34l.05-.64.13-.54.21-.46.26-.38.3-.32.33-.24.35-.2.35-.14.33-.1.3-.06.26-.04.21-.02.13-.01h5.84l.69-.05.59-.14.5-.21.41-.28.33-.32.27-.35.2-.36.15-.36.1-.35.07-.32.04-.28.02-.21V6.07h2.09l.14.01zm-6.47 14.25l-.23.33-.08.41.08.41.23.33.33.23.41.08.41-.08.33-.23.23-.33.08-.41-.08-.41-.23-.33-.33-.23-.41-.08-.41.08z" />
+                          </svg>
+                        </div>
+                        <span className="font-medium">Python</span>
+                      </div>
     
             {/* Node.js */}
            <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
@@ -114,27 +124,45 @@ const About = () => {
              </div>
              <span className="font-medium">Node.js</span>
            </div>
-    
-           {/* DSA */}
+
+           {/* Express */}
            <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
-             <div className="w-6 h-6 mr-3 text-purple-400 group-hover:text-purple-300 transition-colors">
+             <div className="w-6 h-6 mr-3 text-gray-300 group-hover:text-white transition-colors">
                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7 1.49 0 2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z" />
+                 <path d="M24 18.588a1.529 1.529 0 01-1.895-.72l-3.45-4.771-.5-.667-4.003 5.444a1.466 1.466 0 01-1.802.708l5.158-6.92-4.798-6.251a1.595 1.595 0 011.9-.666l3.576 4.83 3.596-4.81a1.435 1.435 0 011.788-.668L21.708 7.9l-2.522 3.283a.666.666 0 000 .994l4.804 6.412zM.002 11.576l.42-2.075c1.154-4.103 5.858-5.81 9.094-3.27 1.895 1.489 2.368 3.597 2.275 5.973H1.116C.943 16.447 4.005 19.009 7.92 17.7a4.078 4.078 0 002.582-2.876c.207-.666.548-.78 1.174-.588a5.417 5.417 0 01-2.589 3.957c-2.864 1.607-6.509.018-7.978-2.667C.480 14.794.002 13.117.002 11.576zm8.65-5.573a3.837 3.837 0 00-6.61.308A3.838 3.838 0 001.115 8.65h8.018a3.973 3.973 0 00-.481-2.647z" />
                </svg>
              </div>
-             <span className="font-medium">DSA</span>
+             <span className="font-medium">Express</span>
            </div>
-           
-           {/* C++ / C */}
+
+           {/* FastAPI */}
            <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
-             <div className="w-6 h-6 mr-3 text-blue-500 group-hover:text-blue-400 transition-colors">
+             <div className="w-6 h-6 mr-3 text-green-400 group-hover:text-green-300 transition-colors">
                <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M10.5 15.97L10.91 18.41C10.65 18.55 10.23 18.68 9.67 18.8C9.1 18.93 8.43 19 7.66 19C5.45 18.96 3.79 18.3 2.68 17.04C1.56 15.77 1 14.16 1 12.21C1.05 9.9 1.72 8.13 3 6.89C4.32 5.64 5.96 5 7.94 5C8.69 5 9.34 5.07 9.88 5.19C10.42 5.31 10.82 5.44 11.08 5.59L10.5 8.08L9.44 7.74C9.04 7.64 8.58 7.59 8.05 7.59C7.34 7.59 6.71 7.79 6.16 8.17C5.61 8.55 5.17 9.09 4.84 9.78C4.53 10.5 4.37 11.29 4.37 12.15C4.37 13.15 4.55 13.93 4.92 14.48C5.29 15.03 5.77 15.42 6.34 15.64C6.92 15.87 7.5 15.97 8.1 15.97C8.5 15.97 8.88 15.92 9.24 15.82L10.5 15.97Z" />
-                 <path d="M15.3 19L13.89 13.26H13.8L12.38 19H9.85L12.13 11H15.55L17.84 19H15.3Z" />
-                 <path d="M20.1 19V17.2H23V19H20.1Z" />
+                 <path d="M12 0L1.608 6v12L12 24l10.392-6V6L12 0zm-1.073 7.445h.001c.1 0 .183.082.183.183v1.504c0 .1-.082.183-.183.183h-.001c-.1 0-.183-.082-.183-.183V7.628c0-.1.082-.183.183-.183zm2.146 0h.001c.1 0 .183.082.183.183v1.504c0 .1-.082.183-.183.183h-.001c-.1 0-.183-.082-.183-.183V7.628c0-.1.082-.183.183-.183zm-4.292 2.147h.001c.1 0 .183.082.183.183v1.504c0 .1-.082.183-.183.183h-.001c-.1 0-.183-.082-.183-.183V9.775c0-.1.082-.183.183-.183zm2.146 0h.001c.1 0 .183.082.183.183v1.504c0 .1-.082.183-.183.183h-.001c-.1 0-.183-.082-.183-.183V9.775c0-.1.082-.183.183-.183zm2.146 0h.001c.1 0 .183.082.183.183v1.504c0 .1-.082.183-.183.183h-.001c-.1 0-.183-.082-.183-.183V9.775c0-.1.082-.183.183-.183zm2.146 0h.001c.1 0 .183.082.183.183v1.504c0 .1-.082.183-.183.183h-.001c-.1 0-.183-.082-.183-.183V9.775c0-.1.082-.183.183-.183z" />
                </svg>
              </div>
-             <span className="font-medium">C++ / C</span>
+             <span className="font-medium">FastAPI</span>
+           </div>
+
+           {/* MongoDB */}
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <div className="w-6 h-6 mr-3 text-green-600 group-hover:text-green-500 transition-colors">
+               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M17.193 9.555c-1.264-5.58-4.252-7.414-4.573-8.115-.28-.394-.53-.954-.735-1.44-.036.495-.055.685-.523 1.184-.723.566-4.438 3.682-4.74 10.02-.282 5.912 4.27 9.435 4.888 9.884l.07.05A73.49 73.49 0 0111.91 24h.481c.114-1.032.284-2.056.51-3.07.417-.296.604-.463.85-.693a11.342 11.342 0 003.639-8.464c.01-.814-.103-1.662-.197-2.218zm-5.336 8.195s0-8.291.275-8.29c.213 0 .49 10.695.49 10.695-.381-.045-.765-1.76-.765-2.405z" />
+               </svg>
+             </div>
+             <span className="font-medium">MongoDB</span>
+           </div>
+
+           {/* Postman */}
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <div className="w-6 h-6 mr-3 text-orange-400 group-hover:text-orange-300 transition-colors">
+               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
+                 <path d="M13.527.099C6.955-.744.942 3.9.099 10.473c-.843 6.572 3.8 12.584 10.373 13.428 6.573.843 12.587-3.801 13.428-10.374C24.744 6.955 20.101.943 13.527.099zm2.471 7.485a.855.855 0 0 0-.593.25l-4.453 4.453-.307-.307-.643-.643c4.389-4.376 5.18-4.418 5.996-3.753zm-4.863 4.861l4.44-4.44a.62.62 0 1 1 .847.903l-4.699 4.125-.588-.588zm.33.694l-1.1.238a.06.06 0 0 1-.067-.032.06.06 0 0 1 .01-.073l.645-.645.512.512zm-2.803-.459l1.172-1.172.879.878-1.979.426a.074.074 0 0 1-.085-.039.072.072 0 0 1 .013-.093zm-3.646 6.058a.076.076 0 0 1-.069-.083.077.077 0 0 1 .022-.046h.002l.946-.946 1.222 1.222-2.123-.147zm2.425-1.256a.228.228 0 0 0-.117.256l.203.865a.125.125 0 0 0 .211.073l.19-.190-.487-.487v-.517zm1.839-1.677c-.287.287-.19.618.153.618.404 0 .618-.437.618-.618a.619.619 0 0 0-.771-.618z" />
+               </svg>
+             </div>
+             <span className="font-medium">Postman</span>
            </div>
            
            {/* HTML/CSS */}
@@ -155,16 +183,6 @@ const About = () => {
                </svg>
              </div>
              <span className="font-medium">GitHub</span>
-           </div>
-           
-           {/* Vercel */}
-           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
-             <div className="w-6 h-6 mr-3 text-white group-hover:text-gray-200 transition-colors">
-               <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-                 <path d="M12 2L24 22H0L12 2Z" />
-               </svg>
-             </div>
-             <span className="font-medium">Vercel</span>
            </div>
          </div>
                      </div>
