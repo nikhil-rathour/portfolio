@@ -11,72 +11,89 @@ const Projects = () => {
 
   const projects = [
     {
+      id: 10,
+      title: "HelloBooks.ai",
+      description: "Internship project at Meru Technosoft — the last product I worked on. AI-native bookkeeping and accounting for SMBs, with automated categorization, reconciliation, and reporting.",
+      tags: ["Internship", "AI", "Product"],
+      link: "https://hellobooks.ai/",
+      category: "ai"
+    },
+    {
+      id: 11,
+      title: "Flex AI Studio 2.0",
+      description: "Hackathon project (SIH internal 2nd Runner-Up): AI-based no-code portfolio builder with authentication and a dynamic dashboard.",
+      tags: ["MERN", "React", "AI", "Hackathon"],
+      link: "https://flex-ai-red.vercel.app/",
+      github: "https://github.com/nikhil-rathour/Flex_ai",
+      category: "ai"
+    },
+    {
+      id: 12,
+      title: "Ladhani Estates",
+      description: "Full-stack real estate platform with REST APIs, Firebase auth, PostgreSQL, property management, image uploads, and a responsive React UI.",
+      tags: ["Django", "DRF", "React", "PostgreSQL", "Firebase"],
+      link: "https://ladhani-estates-frontend.vercel.app/",
+      github: "https://github.com/nikhil-rathour/ladhani_estates",
+      category: "fullstack"
+    },
+    {
       id: 1,
       title: "PetZone",
-      description: "A hackathon-winning project for pet adoption and services using React, JavaScript, and Appwrite.",
-      tags: ["React", "JavaScript", "Appwrite"],
-      image: "/petzonelogo.jpg"
-,
+      description: "Hackathon 1st Runner-Up pet adoption platform serving 200+ users with JWT authentication, listings, and a responsive UI.",
+      tags: ["React", "JavaScript", "JWT", "REST APIs"],
       link: "https://petzone-mu.vercel.app/",
+      github: "https://github.com/nikhil-rathour/petzone",
       category: "web"
     },
-
     {
-  id: 7,
-  title: "Uber Clone (MERN Full-Stack)",
-  description: "Fully functional ride-booking platform with user authentication, real-time ride status, and admin features.",
-  tags: ["MongoDB", "Express.js", "React.js", "Node.js", "Full-Stack"],
-  image: "/project9.jpg",
-  link: "https://uber-clone-opal.vercel.app/", 
-  category: "fullstack"
-  },
-  {
-  id: 5,
-  title: "AI Code Reviewer",
-  description: "LLM-powered real-time code review tool that gives intelligent feedback on JavaScript and React code.",
-  tags: ["React.js", "TypeScript", "Google Gemini API", "NLP"],
-  image: "/project7.jpg",
-  link: "https://ai-code-reviewer-ten-ivory.vercel.app/", 
-  category: "ai"
-},
-{
-  id: 6,
-  title: "AI Chatbot (NLP-based)",
-  description: "Conversational chatbot built using Next.js and powered by Natural Language Processing and LLMs.",
-  tags: ["Next.js", "TypeScript", "Tailwind CSS", "AI API", "NLP"],
-  image: "/project8.jpg",
-  link: "https://aichatbot-pi-three.vercel.app/", 
-  category: "ai"
-},
+      id: 7,
+      title: "Uber Clone (MERN Full-Stack)",
+      description: "Fully functional ride-booking platform with user authentication, real-time ride status, and admin features.",
+      tags: ["MongoDB", "Express.js", "React.js", "Node.js"],
+      link: "https://uber-clone-opal.vercel.app/",
+      category: "fullstack"
+    },
+    {
+      id: 5,
+      title: "AI Code Reviewer",
+      description: "LLM-powered real-time code review tool using React, TypeScript, and the Google Gemini API.",
+      tags: ["React.js", "TypeScript", "Google Gemini API"],
+      link: "https://ai-code-reviewer-ten-ivory.vercel.app/",
+      category: "ai"
+    },
+    {
+      id: 6,
+      title: "AI Chatbot (NLP-based)",
+      description: "Conversational chatbot built using Next.js and powered by Natural Language Processing and LLMs.",
+      tags: ["Next.js", "TypeScript", "Tailwind CSS", "AI API"],
+      link: "https://aichatbot-pi-three.vercel.app/",
+      category: "ai"
+    },
     {
       id: 2,
       title: "EVENTsync",
       description: "Website for college clubs and activities management with event scheduling and registration.",
       tags: ["React", "Node.js", "Express"],
-      image: "/project2.jpg",
       link: "https://eventsync-tafw.onrender.com/",
       category: "web"
     },
     {
       id: 3,
-      title: "GitHub API",
-      description: "A simplified interface for fetching and displaying GitHub user repositories and information.",
+      title: "GitHub API Search Engine",
+      description: "Mini search engine for GitHub profiles and repositories using React and the GitHub API.",
       tags: ["React", "JavaScript", "GitHub API"],
-      image: "/project3.jpg",
       link: "https://github-api-rho-two.vercel.app/",
       category: "api"
     },
     {
       id: 4,
       title: "Portfolio Website",
-      description: "Custom portfolio website with animations and responsive design (this website).",
+      description: "Custom portfolio with animations and a responsive layout (this website).",
       tags: ["React", "Tailwind", "Framer Motion"],
-      image: "/portfolio.jpg",
-      link: "#",
+      link: "https://www.nikhilrathour.in/",
+      github: "https://github.com/nikhil-rathour/portfolio",
       category: "web"
     },
-    ,
-
   ];
 
   useEffect(() => {
@@ -178,7 +195,7 @@ const Projects = () => {
                   </div>
                 </div>
                 
-                <div className="px-8 pb-8 mt-auto">
+                <div className="px-8 pb-8 mt-auto space-y-3">
                   <a 
                     href={project.link} 
                     className="inline-flex items-center justify-center w-full py-3 px-6 bg-gradient-to-r from-cyan-500/10 to-blue-500/10 hover:from-cyan-500 hover:to-blue-500 border border-cyan-500/30 rounded-lg text-cyan-400 hover:text-white font-medium transition-all duration-300 group-hover:shadow-lg group-hover:shadow-cyan-500/20"
@@ -187,6 +204,16 @@ const Projects = () => {
                   >
                     View Project <span className="ml-2 fas fa-arrow-right"></span>
                   </a>
+                  {project.github && (
+                    <a
+                      href={project.github}
+                      className="inline-flex items-center justify-center w-full py-2.5 px-6 border border-gray-600/50 rounded-lg text-gray-300 hover:text-white hover:border-gray-400 transition-all duration-300"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      GitHub <span className="ml-2 fab fa-github"></span>
+                    </a>
+                  )}
                 </div>
               </motion.div>
             ))}
@@ -211,7 +238,7 @@ const Projects = () => {
               <div className="md:w-2/3">
                 <h2 className="text-3xl md:text-4xl font-bold mb-6">
                   <span className="bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-purple-500">
-                    Ready to bring your ideas to reali?
+                    Ready to bring your ideas to reality?
                   </span>
                 </h2>
                 <p className="text-xl text-gray-300 mb-8 leading-relaxed">

@@ -26,7 +26,7 @@ const About = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8">
-            Passionate Web Developer & BCA Student
+            Full-Stack Developer · Python Intern · BCA, CGPA 9.0
           </p>
         </motion.div>
       </section>
@@ -65,18 +65,16 @@ const About = () => {
               
               <div className="space-y-6 text-gray-300">
                 <p className="text-lg">
-                  I'm a Python Full-Stack Developer currently pursuing a Bachelor of Computer Applications, 
-                  with hands-on experience in building scalable web applications. I specialize in Python, 
-                  FastAPI, React, MongoDB, and RESTful APIs, with a strong focus on backend development 
-                  and a keen interest in Artificial Intelligence and Large Language Models (LLMs).
-                  </p>
-                
-                 <p className="text-lg">
-                  In 2024, I secured the 1st Runner-Up position at the Hack the Mountain national-level 
-                  hackathon in Rajkot for my project "PetZone." This experience has motivated me to continue
-                  striving toward my goal of becoming a skilled full-stack developer.
-                 </p>
-                  </div>
+                  I'm a Full-Stack Developer (BCA, CGPA 9.0) with hands-on experience in REST APIs,
+                  JWT auth, and AI-driven features. I work across React, Node.js, Express, Python,
+                  FastAPI, Django REST Framework, MongoDB, and PostgreSQL.
+                </p>
+                <p className="text-lg">
+                  I currently intern at Infolabz IT Services, and previously shipped product work
+                  at Meru Technosoft on HelloBooks.ai. I was 1st Runner-Up at Hack the Mountain 2024
+                  (PetZone) and 2nd Runner-Up in the SIH internal round 2026 (Flex Portfolio Builder).
+                </p>
+              </div>
 
                  {/* Core Skills */}
                {/* Core Skills */}
@@ -184,6 +182,31 @@ const About = () => {
              </div>
              <span className="font-medium">GitHub</span>
            </div>
+
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <span className="w-6 h-6 mr-3 fas fa-code text-green-400"></span>
+             <span className="font-medium">Django / DRF</span>
+           </div>
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <span className="w-6 h-6 mr-3 fas fa-database text-sky-400"></span>
+             <span className="font-medium">PostgreSQL</span>
+           </div>
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <span className="w-6 h-6 mr-3 fas fa-lock text-amber-400"></span>
+             <span className="font-medium">JWT / Firebase</span>
+           </div>
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <span className="w-6 h-6 mr-3 fas fa-brain text-purple-400"></span>
+             <span className="font-medium">Gemini API</span>
+           </div>
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <span className="w-6 h-6 mr-3 fas fa-wind text-cyan-300"></span>
+             <span className="font-medium">Tailwind CSS</span>
+           </div>
+           <div className="flex items-center p-3 bg-gray-800/60 rounded-lg border border-gray-700 hover:border-cyan-500/50 transition-all duration-300 hover:-translate-y-1 group">
+             <span className="w-6 h-6 mr-3 fas fa-code-branch text-gray-300"></span>
+             <span className="font-medium">Git</span>
+           </div>
          </div>
                      </div>
 
@@ -221,12 +244,53 @@ const About = () => {
         </div>
       </section>
 
-      {/* Education & Hackathons */}
+      </section>
 
-
-      
-
-
+      <section className="py-10">
+        <div className="container mx-auto px-6">
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5 }}
+            viewport={{ once: true }}
+          >
+            <h3 className="text-2xl font-bold mb-8 flex items-center gap-3">
+              <span className="text-cyan-400">💼</span>
+              Experience
+            </h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+              <div className="relative pl-8 border-l-2 border-gray-700">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-400"></div>
+                <p className="text-cyan-400 text-sm mb-1">Jan 2026 – Present · Ahmedabad</p>
+                <h4 className="text-xl font-semibold">Python Intern</h4>
+                <p className="text-purple-300 mb-2">Infolabz IT Services Pvt. Ltd.</p>
+                <p className="text-gray-400">
+                  Building REST APIs and backend features with the Python team, including database
+                  integration and clean, scalable code.
+                </p>
+              </div>
+              <div className="relative pl-8 border-l-2 border-gray-700">
+                <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-400"></div>
+                <p className="text-cyan-400 text-sm mb-1">Internship · Meru Technosoft</p>
+                <h4 className="text-xl font-semibold">Product / Engineering Intern</h4>
+                <p className="text-purple-300 mb-2">HelloBooks.ai</p>
+                <p className="text-gray-400">
+                  Contributed to HelloBooks.ai, AI-native bookkeeping software for SMBs — the last
+                  product I worked on during my internship at Meru Technosoft.
+                </p>
+                <a
+                  href="https://hellobooks.ai/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-block mt-2 text-sm text-cyan-400 hover:text-cyan-300"
+                >
+                  Live product →
+                </a>
+              </div>
+            </div>
+          </motion.div>
+        </div>
+      </section>
 
 {/* Education & Hackathons */}
 <section className="py-20">
@@ -261,16 +325,15 @@ const About = () => {
                   {
                     degree: "Bachelor of Computer Applications",
                     institution: "Swarrnim Startup & Innovation University",
-
                     period: "2023 - 2026",
-                    
+                    description: "CGPA 9.0 · Ahmedabad, India",
                   }, 
                 
                   {
-                    degree: "Senior Secondary Education",
-                    institution: "I.P. Mission English School (GSEB BOARD)",
+                    degree: "12th Grade – Science",
+                    institution: "I.P. Mission English School (GSEB)",
                     period: "2023",
-                   
+                    description: "80 Percentile · Ahmedabad, India",
                   }
                 ].map((item, index) => (
                   <div key={index} className="relative pl-8 border-l-2 border-gray-700 group mb-11">
@@ -360,6 +423,50 @@ const About = () => {
     </div>
   </div>
 </div>
+          {/* Smart India Hackathon */}
+          <div className="group relative overflow-hidden rounded-xl mb-4">
+  <div className="absolute inset-0 rounded-xl overflow-hidden z-0">
+    <div className="absolute inset-0 bg-gradient-to-r from-cyan-600/20 to-blue-500/20 group-hover:opacity-75 transition-opacity duration-300"></div>
+  </div>
+  <div className="relative z-10 rounded-xl p-5">
+    <h4 className="text-xl font-bold text-white mb-2 flex items-center">
+      <span className="text-blue-400 mr-2">🇮🇳</span>
+      Smart India Hackathon — Internal Round
+    </h4>
+    <p className="text-gray-300 mb-3">
+      Built Flex Portfolio Builder, a MERN no-code portfolio app with authentication and a dynamic dashboard.
+    </p>
+    <div className="flex flex-wrap gap-2 mb-4">
+      <span className="px-2 py-1 bg-blue-900/50 text-blue-300 rounded-md text-xs font-medium border border-blue-700/50">2nd Runner-up</span>
+      <span className="px-2 py-1 bg-cyan-900/50 text-cyan-300 rounded-md text-xs font-medium border border-cyan-700/50">Ahmedabad</span>
+      <span className="px-2 py-1 bg-purple-900/50 text-purple-300 rounded-md text-xs font-medium border border-purple-700/50">2026</span>
+    </div>
+    <div className="mt-3">
+      <h5 className="font-semibold text-cyan-300 mb-2">Project: Flex AI Studio 2.0</h5>
+      <p className="text-gray-400 text-sm mb-2">
+        AI-assisted no-code portfolio builder with auth and dashboard management.
+      </p>
+      <div className="flex gap-3 mt-3 relative z-20">
+        <a
+          href="https://github.com/nikhil-rathour/Flex_ai"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-sm text-cyan-400 hover:text-cyan-300 transition-colors duration-300"
+        >
+          <span>GitHub</span>
+        </a>
+        <a
+          href="https://flex-ai-red.vercel.app/"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-flex items-center text-sm text-purple-400 hover:text-purple-300 transition-colors duration-300"
+        >
+          <span>Demo</span>
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
           {/* Spark the Summer */}
           <div className="group relative overflow-hidden rounded-xl mb-4">
   {/* Gradient overlay - moved to pseudo-element */}
@@ -436,8 +543,8 @@ const About = () => {
             </h2>
             
             <p className="text-xl text-gray-300 leading-relaxed mb-10">
-              To become a proficient web developer, contributing innovative solutions
-              to web development projects and continuously expanding my technical expertise.
+              To become a proficient full-stack engineer shipping production APIs, AI features,
+              and polished web products — and keep growing through internships, hackathons, and real client work.
             </p>
             
             <Link 
