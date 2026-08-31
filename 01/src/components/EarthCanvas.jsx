@@ -22,7 +22,8 @@ const EarthCanvas = () => {
   return (
     <Canvas
       className="cursor-pointer"
-      frameloop="demand"
+      frameloop="always"
+      dpr={[1, 1.5]}
       camera={{ position: [-4, 3, 6], fov: 45, near: 0.1, far: 200 }}
     >
       <ambientLight intensity={0.5} />

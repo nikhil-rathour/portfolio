@@ -91,7 +91,7 @@ const Connect = () => {
     },
     {
       name: 'linkedin',
-      url: 'https://www.linkedin.com/in/nikhil-rathour-8a56302a6',
+      url: 'https://www.linkedin.com/in/nikhil-rathour',
       icon: 'fa-linkedin-in',
       color: 'group-hover:text-blue-400'
     },
@@ -189,10 +189,10 @@ const Connect = () => {
                   <div className="pt-1">
                     <h3 className="text-lg font-semibold">Email</h3>
                     <a 
-                      href="mailto:rathournikhil042@gmail.com" 
+                      href="mailto:rathournikhil045@gmail.com" 
                       className="text-gray-400 hover:text-cyan-400 transition-colors group-hover:text-cyan-300"
                     >
-                      rathournikhil042@gmail.com
+                      rathournikhil045@gmail.com
                     </a>
                   </div>
                 </motion.div>
@@ -262,7 +262,7 @@ const Connect = () => {
               >
                 <h3 className="text-2xl font-semibold mb-3 bg-clip-text text-transparent bg-gradient-to-r from-cyan-400 to-blue-500">Available For</h3>
                 <ul className="space-y-2">
-                  {['Freelance Projects', 'Hackathons'," Web devlopment", 'Collaborations'].map((item, index) => (
+                  {['Internships', 'Freelance Projects', 'Hackathons', 'Web development', 'Collaborations'].map((item, index) => (
                     <li key={index} className="flex items-center text-gray-300">
                       <span className="mr-2 text-green-400 text-sm fas fa-check-circle"></span>
                       {item}
