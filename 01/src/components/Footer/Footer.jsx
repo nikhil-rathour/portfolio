@@ -21,12 +21,19 @@ const Footer = () => {
           whileInView={{ opacity: 1 }}
           transition={{ duration: 0.5, delay: 0.4 }}
           viewport={{ once: true }}
-          className="border-t border-gray-800/50 mt-14 pt-8 text-center"
+          className="border-t border-gray-800/50 mt-14 pt-8 flex flex-col sm:flex-row items-center justify-between gap-3 text-center"
         >
-          <a  href="https://github.com/nikhil-rathour/portfolio/tree/main " className="text-gray-500 text-sm">
+          <a href="https://github.com/nikhil-rathour/portfolio/tree/main" className="text-gray-500 text-sm">
             © {currentYear} Nikhil Rathour. All rights reserved.
           </a>
-          
+          <a
+            href="https://mail.google.com/mail/?view=cm&to=rathournikhil045@gmail.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-cyan-400 hover:text-cyan-300 text-sm transition-colors duration-300"
+          >
+            rathournikhil045@gmail.com
+          </a>
         </motion.div>
       </div>
     </footer>
