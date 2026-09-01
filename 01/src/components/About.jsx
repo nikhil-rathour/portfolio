@@ -26,7 +26,7 @@ const About = () => {
             </span>
           </h1>
           <p className="text-xl text-gray-300 mb-8">
-            Full-Stack Developer · Python Intern · BCA, CGPA 9.0
+            Full-Stack Developer · MERN Stack Intern · BCA, CGPA 9.0
           </p>
         </motion.div>
       </section>
@@ -70,9 +70,10 @@ const About = () => {
                   FastAPI, Django REST Framework, MongoDB, and PostgreSQL.
                 </p>
                 <p className="text-lg">
-                  I currently intern at Infolabz IT Services, and previously shipped product work
-                  at Meru Technosoft on HelloBooks.ai. I was 1st Runner-Up at Hack the Mountain 2024
-                  (PetZone) and 2nd Runner-Up in the SIH internal round 2026 (Flex Portfolio Builder).
+                  I currently intern at Sapphire Infocom Pvt. Ltd. as a MERN Stack Developer, and
+                  previously completed a 2-month Python internship at Infolabz IT Services in 2025.
+                  I was 1st Runner-Up at Hack the Mountain 2024 (PetZone) and 2nd Runner-Up in the
+                  SIH internal round 2026 (Flex Portfolio Builder).
                 </p>
               </div>
 
@@ -259,31 +260,23 @@ const About = () => {
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
               <div className="relative pl-8 border-l-2 border-gray-700">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-cyan-400"></div>
-                <p className="text-cyan-400 text-sm mb-1">Jan 2026 – Present · Ahmedabad</p>
-                <h4 className="text-xl font-semibold">Python Intern</h4>
-                <p className="text-purple-300 mb-2">Infolabz IT Services Pvt. Ltd.</p>
+                <p className="text-cyan-400 text-sm mb-1">Present · Ahmedabad</p>
+                <h4 className="text-xl font-semibold">MERN Stack Developer Intern</h4>
+                <p className="text-purple-300 mb-2">Sapphire Infocom Pvt. Ltd.</p>
                 <p className="text-gray-400">
-                  Building REST APIs and backend features with the Python team, including database
-                  integration and clean, scalable code.
+                  Working as a MERN Stack Developer, building full-stack web applications using
+                  MongoDB, Express, React, and Node.js.
                 </p>
               </div>
               <div className="relative pl-8 border-l-2 border-gray-700">
                 <div className="absolute -left-[9px] top-0 w-4 h-4 rounded-full bg-purple-400"></div>
-                <p className="text-cyan-400 text-sm mb-1">Internship · Meru Technosoft</p>
-                <h4 className="text-xl font-semibold">Product / Engineering Intern</h4>
-                <p className="text-purple-300 mb-2">HelloBooks.ai</p>
+                <p className="text-cyan-400 text-sm mb-1">2025 · 2 Months · Ahmedabad</p>
+                <h4 className="text-xl font-semibold">Python Intern</h4>
+                <p className="text-purple-300 mb-2">Infolabz IT Services Pvt. Ltd.</p>
                 <p className="text-gray-400">
-                  Contributed to HelloBooks.ai, AI-native bookkeeping software for SMBs — the last
-                  product I worked on during my internship at Meru Technosoft.
+                  Completed a 2-month internship building REST APIs and backend features with the
+                  Python team, including database integration and clean, scalable code.
                 </p>
-                <a
-                  href="https://hellobooks.ai/"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-block mt-2 text-sm text-cyan-400 hover:text-cyan-300"
-                >
-                  Live product →
-                </a>
               </div>
             </div>
           </motion.div>
