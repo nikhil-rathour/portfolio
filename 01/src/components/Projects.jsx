@@ -2,6 +2,7 @@
 import { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
+import { Seo, breadcrumbSchema } from '../seo';
 
 
 
@@ -129,6 +130,7 @@ const Projects = () => {
 
   return (
     <div className=" text-white">
+      <Seo title="Full Stack Projects | Nikhil Rathour" description="Explore full-stack, React, Node.js, Python, Next.js, and AI projects by Nikhil Rathour, a developer in Ahmedabad, India." path="/projects" schema={[breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'Projects', path: '/projects' }])]} />
       {/* Decorative Elements */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob"></div>

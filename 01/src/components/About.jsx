@@ -2,10 +2,12 @@
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import IronManCanvas from './Ironman';
+import { Seo, breadcrumbSchema } from '../seo';
 
 const About = () => {
   return (
    <div className=" text-white">
+      <Seo title="About Nikhil Rathour | Full Stack Developer in Ahmedabad" description="Learn about Nikhil Rathour, a Full Stack Developer in Ahmedabad with experience in React, Node.js, Python, REST APIs, PostgreSQL, and AI-driven features." path="/about" schema={[breadcrumbSchema([{ name: 'Home', path: '/' }, { name: 'About', path: '/about' }])]} />
       {/* Decorative Elements */}
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob"></div>

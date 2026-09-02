@@ -2,6 +2,7 @@ import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import EarthCanvas from './EarthCanvas';
+import { Seo } from '../seo';
 
 const ROLES = [
   'Full-Stack Developer',
@@ -62,10 +63,6 @@ const Home = () => {
   const deleting = useRef(false);
 
   useEffect(() => {
-    document.title = 'Nikhil Rathour | Portfolio';
-  }, []);
-
-  useEffect(() => {
     let timeoutId;
 
     const tick = () => {
@@ -108,6 +105,7 @@ const Home = () => {
 
   return (
     <div className="text-white">
+      <Seo title="Nikhil Rathour | Full Stack Developer & Software Engineer" />
       <div className="fixed top-0 left-0 w-full h-full overflow-hidden pointer-events-none z-0">
         <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-blue-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob"></div>
         <div className="absolute top-3/4 right-1/4 w-96 h-96 bg-purple-500 rounded-full mix-blend-multiply filter blur-[128px] opacity-15 animate-blob animation-delay-2000"></div>
